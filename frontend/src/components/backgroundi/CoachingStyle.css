@@ -1,0 +1,111 @@
+/* General Styles */
+*{
+    font-family: Arial, sans-serif;
+}
+body {
+    
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+/* Section Container */
+.coaching-section {
+    background-image: url('../../assets/gymbackground.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Keeps the background fixed */
+    padding: 50px 20px;
+    text-align: center;
+    z-index: -1;
+    
+}
+
+/* Container */
+.coaching-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Heading */
+.coaching-title {
+    font-size: 1.8rem;
+    font-weight:500;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.coaching-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.coaching-highlight {
+    color: #c00;
+}
+
+/* Grid Layout */
+.coaching-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Grid Items */
+.coaching-item {
+    background: #ffffff;
+    padding: 20px;
+    height: 170px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.coaching-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Images */
+.coaching-image {
+    width: 65px;
+    margin-bottom: 10px;
+}
+
+/* Text */
+.coaching-text {
+    font-size: 1.1rem;
+    color: #000000;
+    font-weight: bolder;
+    text-align: left;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 992px) {
+    .coaching-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .coaching-heading {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .coaching-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .coaching-heading {
+        font-size: 1.5rem;
+    }
+
+    .coaching-image {
+        width: 80px;
+        height: 80px;
+    }
+}

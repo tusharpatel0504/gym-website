@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.hero-section {
+  background-color: #0f0f0f;
+  margin: auto;
+  padding-bottom: 50px;
+}
+
+.intro-client {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.h1a {
+  
+  font-weight: bold;
+  color: white;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 106.64px;
+  letter-spacing: 0%;
+  width: auto;
+  text-align: center;
+  margin-bottom: 25px;
+  font-family: "Playfair Display";
+}
+
+.testimonial-container {
+ background-color: rgb(255, 255, 255);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb2d;
+  max-width: 1088px;
+  height: 475px;
+  top: 20px;
+  left: 20px;
+  border-radius: 25px;
+  margin: auto;
+  padding-top: 3px;
+}
+
+.testimonial-image {
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  width: 101px;
+  height: 101px;
+  top: 32px;
+  left: 56px;
+}
+
+.testimonial-name {
+  width: auto;
+  height: 54px;
+  top: 56px;
+  left: 175px;
+  font-family: Playfair;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 54px;
+  letter-spacing: 0%;
+  color: #000000;
+}
+
+.testimonial-review {
+  color: #000000;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 25px;
+  max-width: 805px;
+  height: 254px;
+  top: 168px;
+  margin-left: 200px;
+  margin-top: 15px;
+}
+
+.bluet {
+  margin-top: -20px;
+  top: 55px;
+  left: 369px;
+  width: 37px;
+  height: 37px;
+}
+
+.blu-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.name-stars {
+  display: flex;
+  justify-content: space-between;
+  gap: 400px;
+}
+
+.stars {
+  font-size: 34px;
+  color: #FFD700;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.button-container button {
+  border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .h1a {
+    font-size: 60px;
+  }
+
+  .testimonial-container {
+    height: auto;
+    padding: 20px;
+  }
+
+  .testimonial-name {
+    font-size: 35px;
+  }
+
+  .testimonial-review {
+    font-size: 18px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .name-stars {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .stars {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .h1a {
+    font-size: 40px;
+  }
+
+  .testimonial-container {
+    padding: 15px;
+  }
+
+  .testimonial-name {
+    font-size: 30px;
+  }
+
+  .testimonial-review {
+    font-size: 16px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .name-stars {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .stars {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .h1a {
+    font-size: 30px;
+  }
+
+  .testimonial-container {
+    padding: 10px;
+    height: auto;
+  }
+
+  .testimonial-name {
+    font-size: 25px;
+  }
+
+  .testimonial-review {
+    line-height: 30px;
+    height: auto;
+    font-size: 14px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .stars{
+    margin-right: 50px;
+    margin-top: -50px;
+  }
+  .name-stars {
+    
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  .stars {
+    font-size: 24px;
+  }
+}

@@ -1,0 +1,146 @@
+.record_cont_main {
+    margin-top: -120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 250px;
+    position: relative;
+    padding: 36px 15px;
+    width: 100%;
+    background: #0f0f0f;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+.record_cont_item {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 140px;
+}
+
+.record_cont_icon_box {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #c00;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    
+    margin-right: 10px;
+    
+}
+
+.record_cont_icon {
+    width: 40px;
+    height: auto;
+    
+}
+
+.record_cont_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.record_cont_number {
+    font-size: 1.8rem;
+    margin-top: 5px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.record_cont_label {
+    font-size: 1rem;
+    opacity: 0.9;
+    color: #fff;
+}
+
+/* Responsive Fixes */
+@media screen and (max-width: 1024px) {
+    .record_cont_main {
+        gap: 100px;
+    }
+
+    .record_cont_item {
+        max-width: 110px;
+    }
+
+    .record_cont_icon_box {
+        width: 50px;
+        height: 50px;
+    }
+
+    .record_cont_icon {
+        width: 32px;
+    }
+
+    .record_cont_number {
+        font-size: 1.8rem;
+    }
+
+    .record_cont_label {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .record_cont_main {
+        margin-top: -200px;
+        flex-direction: column;
+        padding: 25px;
+        gap: 40px;
+    }
+
+    .record_cont_item {
+        max-width: 100%;
+    }
+
+    .record_cont_icon_box {
+        width: 55px;
+        height: 55px;
+    }
+
+    .record_cont_icon {
+        width: 30px;
+    }
+
+    .record_cont_number {
+        font-size: 1.6rem;
+    }
+
+    .record_cont_label {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .record_cont_main {
+        margin-top: -220px;
+        padding: 20px;
+        gap: 25px;
+    }
+
+    .record_cont_icon_box {
+        width: 45px;
+        height: 45px;
+    }
+
+    .record_cont_icon {
+        width: 25px;
+    }
+
+    .record_cont_number {
+        font-size: 1.4rem;
+    }
+
+    .record_cont_label {
+        font-size: 0.85rem;
+    }
+}

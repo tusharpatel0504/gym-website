@@ -1,0 +1,135 @@
+.image-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  padding: 100px;
+  overflow: hidden;
+}
+
+.image-container h1 {
+  text-align: center;
+  padding-bottom: 50px;
+  color: white;
+  font-size: 3.5rem;
+  font-family: playfair display;
+}
+
+.responsive-image {
+  max-width: 120%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+/* Glowing Elements */
+.image-container::before,
+.image-container::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  filter: blur(100px);
+  z-index: 1;
+}
+
+.image-container::before {
+  background: radial-gradient(circle, rgba(255, 0, 255, 0.4) 10%, transparent 70%);
+  top: -50px;
+  left: -50px;
+}
+
+.image-container::after {
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.4) 10%, transparent 70%);
+  bottom: -50px;
+  right: -50px;
+}
+
+/* Center Glow */
+.center-glow {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, rgba(255, 149, 50, 0.5) 20%, transparent 80%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: blur(80px);
+  z-index: 1;
+}
+
+/* Explore More Button */
+.explore-button {
+  background-color: #B34A09;
+  color: white;
+  padding: 10px 15px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: transform 0.2s, color 0.2s;
+  border-radius: 5px;
+  margin-top: 80px;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  z-index: 2;
+
+}
+
+.explore-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #8a3602;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .image-container {
+    padding: 80px;
+  }
+
+  .image-container h1 {
+    font-size: 3rem;
+  }
+
+  .explore-button {
+    font-size: 1.2rem;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .image-container {
+    padding: 60px;
+  }
+
+  .image-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .explore-button {
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-container {
+    padding: 40px;
+  }
+
+  .image-container h1 {
+    font-size: 2rem;
+    padding-bottom: 30px;
+  }
+
+  .explore-button {
+    font-size: 0.9rem;
+    padding: 5px 8px;
+    margin-top: 20px;
+  }
+}

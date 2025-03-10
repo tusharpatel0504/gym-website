@@ -1,0 +1,538 @@
+
+.lecture-page {
+  margin-top: 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  /* gap: 40px; */
+  min-height: 100vh;
+  position: relative;
+padding-right: 30px;
+
+}
+.common-btn-delete{
+  background: #980000;
+  height: 50px;
+  width: 100px;
+  font-family: playfair display;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  /* font-weight: bold; */
+  font-size: medium;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.pleasetxt {
+  margin: 180px;
+  font-size: 55px;
+  color: white;
+}
+
+.common-btn-addll {
+  background: #B34A09;
+  height: 50px;
+  width: 200px;
+  border: none;
+  border-radius: 7px;
+  color: white;
+  font-weight: bold;
+  font-size: medium;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.button-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.progress {
+  width: 200px;
+  height: 65px;
+  line-height: 27px;
+  background-color: #333;
+  padding: 6px;
+  border-radius: 5px;
+  margin: 3px auto;
+  text-align: center;
+  color: white;
+  margin-top: 120px;
+}
+
+/* Glowing Elements */
+.lecture-page::before,
+.lecture-page::after,
+.lecture-page .center-glow {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  filter: blur(120px);
+  z-index: -3;
+}
+
+/* Top Left Glow */
+.lecture-page::before {
+  background: radial-gradient(circle, rgba(255, 0, 255, 0.4) 10%, transparent 70%);
+  top: -100px;
+  left: -100px;
+}
+
+/* Bottom Right Glow */
+.lecture-page::after {
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.4) 10%, transparent 70%);
+  bottom: -100px;
+  right: 10px;
+}
+
+/* Center Glow */
+.lecture-page .center-glow {
+  background: radial-gradient(circle, rgba(255, 149, 50, 0.5) 20%, transparent 80%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.right {
+  width: 400px;
+  margin-top: 100px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  align-items: center;
+  max-height: calc(100vh - 110px);
+}
+.video-container {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  max-height: 600px;
+  max-width: 1000px;
+  min-width: 1000px;
+  margin-left: 50px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 16 / 9;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.lecture-description-study{
+  width: 1000px;
+  margin-left: 60px;
+  font-size: 20px;
+  color: white;
+  /* text-decoration:; */
+}
+.lecture-title-study{
+  width: 1000px;
+  margin-left: 60px;
+  color: white;
+  margin-bottom: 10px;
+  font-size: 40px;
+  text-align: left;
+}
+
+.video-container.full-screen {
+  border-radius: 0;
+  margin: 0;
+  max-width: 100%;
+  width: 100%;
+  height: 100vh;
+}
+
+.video-controls-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+  padding: 10px;
+}
+
+.video-controls-container.visible {
+  opacity: 1;
+}
+
+.timeline-container {
+  height: 7px;
+  margin: 0 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.timeline {
+  background-color: rgba(255, 255, 255, 0.2);
+  height: 3px;
+  width: 100%;
+  position: relative;
+  transition: height 150ms ease-in-out;
+  border-radius: 1.5px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: calc(100% - var(--preview-position) * 100%);
+  background-color: rgba(255, 255, 255, 0.4);
+  transition: all 150ms ease-in-out;
+  border-radius: 1.5px;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: calc(100% - var(--progress-position) * 100%);
+  background-color: #ff0000;
+  transition: all 150ms ease-in-out;
+  border-radius: 1.5px;
+}
+
+.timeline-container:hover .timeline {
+  height: 100%;
+  transform: scaleY(1);
+}
+
+.timeline .thumb-indicator {
+  position: absolute;
+  transform: translateX(-50%);
+  height: 200%;
+  top: -50%;
+  left: calc(var(--progress-position) * 100%);
+  background-color: #ff0000;
+  border-radius: 50%;
+  transition: transform 150ms ease-in-out;
+  aspect-ratio: 1 / 1;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.timeline-container:hover .thumb-indicator {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+}
+
+.controls button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 0;
+  height: 30px;
+  width: 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  opacity: 0.85;
+  transition: opacity 150ms ease-in-out;
+}
+
+.controls button:hover {
+  opacity: 1;
+}
+
+.volume-container {
+  display: flex;
+  align-items: center;
+}
+
+.volume-slider {
+  width: 0;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: width 150ms ease-in-out, transform 150ms ease-in-out;
+  cursor: pointer;
+  appearance: none;
+  background: transparent;
+  height: 3px;
+  border-radius: 3px;
+  border: none;
+}
+
+.volume-container:hover .volume-slider,
+.volume-slider:focus-within {
+  width: 100px;
+  transform: scaleX(1);
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.volume-slider::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, #ff0000 var(--volume-percent, 0%), rgba(255, 255, 255, 0.2) var(--volume-percent, 0%));
+  height: 3px;
+  border-radius: 3px;
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+.volume-slider::-moz-range-track {
+  background: linear-gradient(to right, #ff0000 var(--volume-percent, 0%), rgba(255, 255, 255, 0.2) var(--volume-percent, 0%));
+  height: 3px;
+  border-radius: 3px;
+}
+
+.duration-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-grow: 1;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+.playback-rate {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 2px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hover-time {
+  position: absolute;
+  bottom: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+  margin-bottom: 5px;
+  transform: translateX(-50%);
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+  pointer-events: none;
+}
+
+.video-container.paused .video-overlay {
+  opacity: 1;
+}
+
+.video-overlay .play-icon {
+  font-size: 48px;
+  color: white;
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
+}
+
+.lecture-number {
+  background-color: #fff;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 50px;
+  transition: all 150ms ease-in-out;
+  display: flex;
+  align-items: center;
+  font-size: large;
+  justify-content: space-between;
+  width: 200px;
+}
+
+.lecture-number:hover {
+  background-color: #f7fafc;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lecture-number.active {
+  background-color: #ebf8ff;
+  border-color: #4299e1;
+  color: #2b6cb0;
+}
+
+.tick-icon {
+  background: #48bb78;
+  padding: 2px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-add-lecture {
+  position: fixed; /* Use fixed to center relative to the viewport */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: Adds a background overlay */
+}
+
+.lecture-form-2 {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 400px;
+  height: auto; 
+}
+.lecture-form-2 h2 {
+  color: #000;
+ 
+}
+
+.lecture-form form {
+  text-align: left;
+}
+
+.lecture-form form label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.lecture-form form input {
+  width: 92%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.upload-progress {
+  margin-top: 10px;
+}
+
+.upload-progress progress {
+  width: 100%;
+}
+
+.upload-progress span {
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  .lecture-page {
+    flex-direction: column;
+  }
+
+  .left, .right {
+    width: 100%;
+  }
+
+  .video-container {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .controls {
+    gap: 4px;
+  }
+
+  .duration-container {
+    display: none;
+  }
+
+  .progress {
+    width: 50%;
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.video-container.paused .play-pause-btn {
+  animation: pulse 1s infinite;
+}
+
+/* Add Lecture Form Overlay */
+.back-add-lecture {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black overlay */
+  z-index: 1000; /* Ensure it's above everything */
+}
+
+.lecture-form-2 {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1001; /* Ensure form is above the overlay */
+  position: relative;
+}
+
+.close-button-lecture {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  z-index: 999; /* Below the form but above everything else */
+}

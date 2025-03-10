@@ -1,0 +1,131 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  box-shadow: -53.77px 53.77px 53.77px 0px rgba(255, 255, 255, 0.1) inset,
+              53.77px -53.77px 53.77px 0px rgba(86, 86, 86, 0.1) inset;
+  z-index: 1000;
+}
+
+.logo1 {
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 35px;
+  border: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-btn {
+  background-color: #B34A09;
+  color: white;
+  padding: 10px 15px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: transform 0.2s, color 0.2s;
+  border-radius: 5px;
+}
+
+.nav-btn:hover {
+  transform: scale(1.05);
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+}
+
+.login-btn {
+  background-color: #B34A09;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.login-btn:hover {
+  transform: scale(1.05);
+  background-color: #92380c;
+}
+
+/* Mobile Menu */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: black;
+}
+
+.menu-icon .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #333;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 90px;
+    right: 0;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    display: none;
+    padding: 20px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .user-section {
+    display: none;
+  }
+}
+
+/* Hamburger Menu Animation */
+.menu-icon.open .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-icon.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}

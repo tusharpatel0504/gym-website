@@ -1,0 +1,58 @@
+.sidebar {
+  background-color: black;
+  padding-top: 180px;
+  width: 250px;
+  height: 100vh;
+  left: 0;
+  color: white;
+  border-right: 1px solid rgb(0, 0, 0);
+
+  @media (max-width: 768px) {
+    width: 30px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      background-color: #B34A09;
+      margin-bottom: 10px;
+      cursor: pointer;
+      padding: 12px;
+
+      @media (max-width: 768px) {
+        padding: 7px;
+      }
+
+      &:hover {
+        background-color: gray;
+      }
+
+      a {
+        display: flex;
+        text-decoration: none;
+        counter-reset: blueviolet;
+
+        span {
+          margin-left: 15px;
+
+          @media (max-width: 768px) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+.textadmin{
+  color: #ffffff;
+}
+.dashboard-admin {
+  display: flex;
+  min-height: 80vh;
+  margin-top: 20px;
+}
+.icon{
+  color: rgb(255, 255, 255);
+}

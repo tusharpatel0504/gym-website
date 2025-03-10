@@ -1,0 +1,236 @@
+/* Main container */
+.mainstudydiv {
+  padding-top: 160px;
+  min-height: 100vh;
+  background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 60px;
+  width: 100%; /* Ensure it takes the full width */
+  overflow: hidden; /* Hide any overflow */
+  position: relative; /* Ensure glowing elements are positioned correctly */
+}
+
+/* Course content container */
+.course-study-page {
+  background-color: rgb(24 26 27 / var(--tw-bg-opacity, 1));
+  border-color: rgb(53 58 60 / var(--tw-border-opacity, 1));
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb2d;
+  display: flex;
+  gap: 40px;
+  max-width: 1100px;
+  width: 100%;
+  padding: 40px;
+  
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: white;
+  margin: 0 auto; 
+  position: relative; 
+  z-index: 2; 
+}
+
+
+.leftstudy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.studydivimg img {
+  box-shadow: rgba(252, 249, 249, 0.105) 0px 12px 28px 0px, rgba(237, 237, 237, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  border-radius: 15px;
+  width: 450px;
+ 
+}
+
+
+/* Right section - Details */
+.rigthstudy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+}
+
+/* Course title */
+.studydivtitle p {
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: -25px;
+  color: #ffffff;
+}
+
+/* Course details */
+.studydivdisc p,
+.sameclassname {
+  
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 12px;
+  
+}
+
+
+/* Lecture button */
+.studylecbtn {
+  h2 {
+    margin: auto;
+    color: rgb(0, 0, 0);
+  }
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  background: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  
+ 
+}
+.studylecbtn:hover{
+ 
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  
+}
+
+
+.studylecbtn a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+
+
+/* Responsive Design for screens with a maximum width of 1060px */
+@media (max-width: 1100px) {
+  .course-study-page {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+    width: 730px;
+  }
+
+  .rigthstudy {
+    width: 100%;
+  }
+
+  .studydivimg img {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .studydivtitle p {
+    font-size: 30px;
+    margin-bottom: -25px;
+    color: #ffffff;
+  }
+
+  .studydivdisc p {
+    font-size: 16px;
+  }
+
+  .studylecbtn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+/* Responsive Design for screens with a maximum width of 768px */
+@media (max-width: 768px) {
+  .course-study-page {
+    width: 530px;
+    padding: 20px;
+  }
+
+  .studydivimg img {
+    max-width: 300px;
+  }
+
+  .studydivtitle p {
+    font-size: 30px;
+    margin-bottom: -25px;
+    color: #ffffff;
+  }
+
+  .studydivdisc p {
+    font-size: 14px;
+  }
+
+  .studylecbtn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* Responsive Design for screens with a maximum width of 480px */
+@media (max-width: 550px) {
+  .course-study-page {
+    margin-bottom:40px;
+    padding: 15px 7px 15px 7px;
+    width: 330px;
+  }
+
+  .studydivimg img {
+    max-width: 250px;
+  }
+
+  .studydivtitle p {
+    font-size: 30px;
+    margin-bottom: -25px;
+    color: #ffffff;
+  }
+
+  .studydivdisc p {
+    font-size: 12px;
+  }
+
+  .studylecbtn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+/* Glowing Elements */
+.mainstudydiv::before,
+.mainstudydiv::after,
+.mainstudydiv .center-glow {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  filter: blur(120px);
+  z-index: 1;
+}
+
+/* Top Left Glow */
+.mainstudydiv::before {
+  background: radial-gradient(circle, rgba(255, 0, 255, 0.4) 10%, transparent 70%);
+  top: -100px;
+  left: -100px;
+}
+
+/* Bottom Right Glow */
+.mainstudydiv::after {
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.4) 10%, transparent 70%);
+  bottom: -100px;
+  right: -100px;
+}
+
+/* Center Glow */
+.mainstudydiv .center-glow {
+  background: radial-gradient(circle, rgba(255, 149, 50, 0.5) 20%, transparent 80%);
+  top: 50%;
+  left: 50%;
+  
+}
