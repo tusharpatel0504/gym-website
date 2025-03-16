@@ -1,44 +1,200 @@
 .course-description {
-  padding: 80px 0;
+  margin-top: 10rem;
+  padding: 1rem;
+}
+
+.upper-course-description {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 30%;
+  margin: auto;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #343434;
+}
+
+.course-description-course-header {
   text-align: center;
-  min-height: 55vh;
+  border-right: 0.5px solid white;
+  padding: 0.5rem;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
 
-  .course-header {
-    display: flex;
+.course-description-course-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.course-description-course-info {
+  text-align: left;
+}
+
+.course-description-course-info h2 {
+  color: white;
+  margin-top: 0.5rem;
+}
+
+.course-description-course-info p {
+  color: white;
+  font-size: 1.25rem;
+  margin-top: -0.75rem;
+}
+
+.course-description-course-info span {
+  color: red;
+  font-weight: 600;
+}
+
+.descrip-heading span {
+  color: red;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-decoration: underline;
+}
+
+.course-description-description {
+  text-align: left;
+  padding: 1rem;
+  color: white;
+  width: 100%;
+}
+
+.course-description-description p {
+  color: white;
+  font-size: 1rem;
+}
+
+.getStarted-course-description {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #ec610b;
+  font-weight: 600;
+}
+
+.course-description-buy-btn {
+  background-color: #ec610b;
+  color: white;
+  width: 12.5rem;
+  height: 3.5rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+}
+
+.course-description-buy-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 10px -50px 36px -28px inset;
+  cursor: pointer;
+}
+
+.btnbtncourse-description {
+  max-width: 90%;
+  margin: auto;
+  text-align: center;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.price-tag {
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Ultra-Wide Screens (4K & 8K) */
+@media screen and (min-width: 1920px) {
+  .upper-course-description {
+    max-width: 1400px;
+  }
+}
+
+/* Large Screens (Desktops & Laptops) */
+@media screen and (max-width: 1230px) {
+  .upper-course-description {
+    max-width: 1000px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .upper-course-description {
+    max-width: 800px;
+  }
+}
+
+/* Medium Screens (Tablets) */
+@media screen and (max-width: 850px) {
+  .upper-course-description {
+    max-width: 90%;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 40px;
+    text-align: center;
+  }
 
-    .course-image {
-      width: 200px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
+  .course-description-course-header {
+    border: none;
+    max-width: 500px;
+  }
 
-    .course-info {
-      text-align: left;
+  .course-description-course-image {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+  }
 
-      h2 {
-        font-size: 24px;
-        color: #333;
-      }
+  .course-description-description {
+    border-top: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-width: 500px;
+  }
+}
 
-      p {
-        font-size: 14px;
-        color: #666;
-        margin: 5px 0;
-      }
-    }
+/* Small Screens (Mobile Phones) */
+@media screen and (max-width: 650px) {
+  .upper-course-description,
+  .course-description-course-header {
+    max-width: 90%;
+  }
 
-    p {
-      font-size: 16px;
-      color: #333;
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-    }
+  .course-description-course-image {
+    width: 100%;
+    max-width: 380px;
+  }
+}
+
+/* Extra Small Screens (Very Small Phones & Watches) */
+@media screen and (max-width: 440px) {
+  .upper-course-description,
+  .course-description-course-header {
+    max-width: 95%;
+  }
+
+  .course-description-course-image {
+    max-width: 100%;
+  }
+
+  .course-description-description {
+    max-width: 95%;
+  }
+}
+
+/* Ultra-Small Screens (Below 320px) */
+@media screen and (max-width: 280px) {
+  .course-description-buy-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .getStarted-course-description {
+    font-size: 1.25rem;
+  }
+
+  .price-tag {
+    font-size: 1.5rem;
   }
 }

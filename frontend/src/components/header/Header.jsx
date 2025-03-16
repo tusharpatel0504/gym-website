@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.jpg";
@@ -13,25 +12,24 @@ const Header = ({ isAuth }) => {
       <div className="logo1" style={{ backgroundImage: `url(${logo})` }}></div>
 
       {/* Hamburger Menu Icon */}
-      <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-        ☰
+      <div className={`menu-icon ${menuOpen ? "open" : ""}`} onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? "✖" : "☰"}
       </div>
 
       {/* Navigation Links */}
       <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
-        <Link to={"/"} className="nav-btn">Home</Link>
-        <Link to={"/about"} className="nav-btn">About</Link>
-        <Link to={"/courses"} className="nav-btn">Courses</Link>
+       <div className="abtcouhme"> <Link to={"/"} className="nav-btn2" onClick={() => setMenuOpen(false)}>Home</Link>
+        <Link to={"/about"} className="nav-btn2" onClick={() => setMenuOpen(false)}>About</Link>
+        <Link to={"/courses"} className="nav-btn2" onClick={() => setMenuOpen(false)}>Courses</Link></div>
+        <div className="abtcouhme3">
+        {isAuth ? (
+          <Link to={"/account"} className="login-btn" onClick={() => setMenuOpen(false)}>Account</Link>
+        ) : (
+          <Link to={"/login"} className="login-btn" onClick={() => setMenuOpen(false)}>Login/Register</Link>
+        )}
+        </div>
         
       </nav>
-      {/* User Section */}
-      <div className="user-section">
-        {isAuth ? (
-          <Link to={"/account"} className="login-btn">Account</Link>
-        ) : (
-          <Link to={"/login"} className="login-btn">Login/Register</Link>
-        )}
-      </div>
     </header>
   );
 };

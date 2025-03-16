@@ -27,7 +27,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.course-heading h3 {  
+.course-heading span {  
   font-size: 38px;
   font-weight: 700;
   letter-spacing: 2px;

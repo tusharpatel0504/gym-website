@@ -100,6 +100,7 @@
 @media (max-width: 768px) {
   .about-content {
     flex-direction: column;
+    margin-top: -90px;
     text-align: center;
   }
 

@@ -95,34 +95,38 @@ const CourseDescription = ({ user }) => {
         <>
           {course && (
             <div className="course-description">
-              <div className="course-header">
-                <img
-                  src={`${course.image}`}
-                  alt=""
-                  className="course-image"
-                />
-                <div className="course-info">
-                  <h2>{course.title}</h2>
-                  <p>Instructor: {course.createdBy}</p>
-                  <p>Duration: {course.duration} weeks</p>
+              <div className="upper-course-description">
+                <div className="course-description-course-header">
+                  <img
+                    src={`${course.image}`}
+                    alt=""
+                    className="course-description-course-image"
+                  />
+                  <div className="course-description-course-info">
+                    <h2>{course.title}</h2>
+                    <p><span>Instructor:</span> {course.createdBy}</p>
+                    <p><span>Duration:</span> {course.duration} weeks</p>
+                  </div>
+                </div>
+
+                <div className="course-description-description">
+                  <div className="descrip-heading" ><span  >Course Description:</span><p>{course.description}</p></div>
+
+                  <div className="getStarted-course-description" >Let's get started with course At <span className="price-tag" >₹{course.price}</span></div>
                 </div>
               </div>
 
-              <p>{course.description}</p>
-
-              <p>Let's get started with course At ₹{course.price}</p>
-
               {user && user.subscription.includes(course._id) ? (
-                <button
-                  onClick={() => navigate(`/course/study/${course._id}`)}
-                  className="common-btn"
-                >
-                  Start Training
-                </button>
+                <div className="btnbtncourse-description"><button
+                onClick={() => navigate(`/course/study/${course._id}`)}
+                className="course-description-start-btn course-description-buy-btn"
+              >
+                Start Training
+              </button></div>
               ) : (
-                <button onClick={checkoutHandler} className="common-btn">
-                  Buy Now
-                </button>
+                <div className="btnbtncourse-description"><button onClick={checkoutHandler} className="course-description-buy-btn">
+                Buy Now
+              </button></div>
               )}
             </div>
           )}

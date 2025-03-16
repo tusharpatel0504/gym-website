@@ -64,20 +64,16 @@
 
 /* Explore More Button */
 .explore-button {
-  background-color: #B34A09;
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 24px;
+  background-color: #b34a09;
   color: white;
-  padding: 10px 15px;
-  font-size: 14px;
-  text-decoration: none;
-  transition: transform 0.2s, color 0.2s;
-  border-radius: 5px;
-  margin-top: 80px;
-  font-size: 1.4rem;
-  border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-size: clamp(0.8rem, 2vw, 1rem);
   cursor: pointer;
-  transition: 0.3s ease-in-out;
-  z-index: 2;
+  transition: transform 0.2s, background-color 0.3s;
+  border: none;
 
 }
 

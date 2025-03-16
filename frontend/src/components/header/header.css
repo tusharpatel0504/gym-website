@@ -4,6 +4,24 @@
   padding: 0;
   box-sizing: border-box;
 }
+.abtcouhme{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+ width: 75vw;
+  gap: 20px;
+  
+}
+.abtcouhme3{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 
 .navbar {
   position: absolute;
@@ -29,6 +47,7 @@
   background-position: center;
   border-radius: 35px;
   border: none;
+  aspect-ratio: 1/1;
 }
 
 .nav-links {
@@ -44,6 +63,20 @@
   text-decoration: none;
   transition: transform 0.2s, color 0.2s;
   border-radius: 5px;
+}
+.nav-btn2{
+  background-color: #B34A09;
+  color: white;
+  padding: 10px 15px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: transform 0.2s, color 0.2s;
+  border-radius: 5px;
+ 
+}
+.nav-btn2:hover {
+  transform: scale(1.05);
+  background-color: #92380c;
 }
 
 .nav-btn:hover {
@@ -70,22 +103,17 @@
   background-color: #92380c;
 }
 
-/* Mobile Menu */
+/* Hamburger Menu */
 .menu-icon {
   display: none;
   font-size: 24px;
   cursor: pointer;
-  color: black;
-}
-
-.menu-icon .bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background-color: #333;
+  color: rgb(160, 160, 160);
+  position: absolute;
+  right: 20px; /* Moves to the right */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1100;
 }
 
 /* Responsive Design */
@@ -93,23 +121,31 @@
   .menu-icon {
     display: block;
   }
-
+  .abtcouhme{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+}
   .nav-links {
-    position: absolute;
-    top: 90px;
-    right: 0;
-    width: 100%;
-    background: rgb(0, 0, 0);
+    position: fixed;
+    top: 0;
+    right: -100%; /* Initially hidden */
+    width: 250px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(10px);
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    display: none;
-    padding: 20px;
+    gap: 20px;
+    display: none; /* Hidden by default */
+    padding-top: 100px;
+    transition: right 0.3s ease-in-out;
   }
 
   .nav-links.open {
-    display: flex;
+    display: flex; /* Show only when open */
+    right: 0; /* Slide in from right */
   }
 
   .user-section {

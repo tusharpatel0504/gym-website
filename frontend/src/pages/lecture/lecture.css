@@ -3,14 +3,13 @@
   margin-top: 110px;
   display: flex;
   justify-content: space-between;
-  align-items: top;
-  /* gap: 40px; */
+  align-items: flex-start;
   min-height: 100vh;
   position: relative;
-padding-right: 30px;
-
+  padding-right: 30px;
 }
-.common-btn-delete{
+
+.common-btn-delete {
   background: #980000;
   height: 50px;
   width: 100px;
@@ -18,7 +17,6 @@ padding-right: 30px;
   border: none;
   border-radius: 7px;
   color: white;
-  /* font-weight: bold; */
   font-size: medium;
   cursor: pointer;
   transition: 0.3s;
@@ -42,11 +40,13 @@ padding-right: 30px;
   cursor: pointer;
   transition: 0.3s;
 }
-.button-container{
+
+.button-container {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
+
 .progress {
   width: 200px;
   height: 65px;
@@ -104,36 +104,38 @@ padding-right: 30px;
   align-items: center;
   max-height: calc(100vh - 110px);
 }
+
 .video-container {
   position: relative;
   width: 100%;
-  min-height: 600px;
-  max-height: 600px;
   max-width: 1000px;
   min-width: 1000px;
-  margin-left: 50px;
+  /* border: 3px white solid; */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 12px;
   overflow: hidden;
-  background: #000;
+  background: #ffffff;
   aspect-ratio: 16 / 9;
   cursor: pointer;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.lecture-description-study{
+.lecture-description-study {
   width: 1000px;
-  margin-left: 60px;
   font-size: 20px;
   color: white;
-  /* text-decoration:; */
+  padding: 10px;
+  
 }
-.lecture-title-study{
+
+.lecture-title-study {
   width: 1000px;
-  margin-left: 60px;
   color: white;
-  margin-bottom: 10px;
   font-size: 40px;
   text-align: left;
+  border-bottom: 0.5px solid white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 10px;
 }
 
 .video-container.full-screen {
@@ -247,6 +249,7 @@ padding-right: 30px;
 
 .controls button:hover {
   opacity: 1;
+  transform: scale(1.1);
 }
 
 .volume-container {
@@ -276,8 +279,8 @@ padding-right: 30px;
 .volume-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: white;
   cursor: pointer;
@@ -292,8 +295,8 @@ padding-right: 30px;
 }
 
 .volume-slider::-moz-range-thumb {
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: white;
   cursor: pointer;
@@ -377,6 +380,9 @@ padding-right: 30px;
   font-size: large;
   justify-content: space-between;
   width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .lecture-number:hover {
@@ -400,7 +406,6 @@ padding-right: 30px;
   align-items: center;
   justify-content: center;
 }
-
 .back-add-lecture {
   position: fixed; /* Use fixed to center relative to the viewport */
   width: 100vw;
@@ -458,42 +463,6 @@ padding-right: 30px;
   margin-top: 5px;
 }
 
-@media (max-width: 768px) {
-  .lecture-page {
-    flex-direction: column;
-  }
-
-  .left, .right {
-    width: 100%;
-  }
-
-  .video-container {
-    width: 100%;
-    margin: 10px 0;
-  }
-
-  .controls {
-    gap: 4px;
-  }
-
-  .duration-container {
-    display: none;
-  }
-
-  .progress {
-    width: 50%;
-  }
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-.video-container.paused .play-pause-btn {
-  animation: pulse 1s infinite;
-}
 
 /* Add Lecture Form Overlay */
 .back-add-lecture {
@@ -535,4 +504,322 @@ padding-right: 30px;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
   z-index: 999; /* Below the form but above everything else */
+}
+
+@media (max-width: 1440px) {
+  .video-container {
+    min-width: 400px;
+    max-width: 900px;
+  }
+
+  .left1 {
+    min-width: 400px;
+    max-width: 900px;
+  }
+  .lecture-description-study{
+    width: 880px;
+  }
+  .lecture-title-study{
+    width: 880px;
+  }
+  .vyakhya{
+    width: 900px;
+    box-shadow: rgba(51, 51, 52, 0.2) 0px 7px 29px 0px;
+  }
+}
+
+@media (max-width: 1368px) {
+  .video-container {
+    min-width: 400px;
+    max-width: 800px;
+  }
+
+  .left1 {
+    min-width: 400px;
+    max-width: 800px;
+  }
+  .lecture-description-study{
+    width: 780px;
+  }
+  .lecture-title-study{
+    width: 780px;
+  }
+  .vyakhya{
+    width: 800px;
+  }
+}
+
+@media (max-width: 1268px) {
+  .video-container {
+    min-width: 400px;
+    max-width: 700px;
+  }
+
+  .left1 {
+    min-width: 400px;
+    max-width: 700px;
+  }
+  .lecture-description-study {
+    width: 680px;
+  }
+
+  .lecture-title-study {
+    width: 680px;
+  }
+  .vyakhya{
+    width: 700px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .video-container {
+    min-width: 300px;
+    max-width: 600px;
+  }
+
+  .left1 {
+    min-width: 300px;
+    max-width: 600px;
+  }
+  .lecture-description-study {
+    width: 580px;
+  }
+
+  .lecture-title-study {
+    width: 580px;
+  }
+  .vyakhya{
+    width: 600px;
+  }
+}
+
+
+
+@media (max-width: 1080px) {
+  .video-container {
+    min-width: 300px;
+    max-width: 800px;
+  }
+
+  .left1 {
+    min-width: 300px;
+    max-width: 800px;
+  }
+
+  .lecture-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lecture-description-study {
+    width: 780px;
+    margin-left: 0px;
+    font-size: 20px;
+    color: white;
+    width: 800px;
+  }
+
+  .lecture-title-study {
+    width: 780px;
+    margin-left: 0px;
+    color: white;
+    margin-bottom: 10px;
+    font-size: 40px;
+    text-align: left;
+  }
+  .vyakhya{
+    width: 800px;
+  }
+
+  .right {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 880px) {
+  .video-container {
+    min-width: 300px;
+    max-width: 700px;
+  }
+
+  .left1 {
+    min-width: 300px;
+    max-width: 700px;
+    margin-left: 20px;
+  }
+
+  .lecture-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lecture-description-study {
+    width: 670px;
+  }
+
+  .lecture-title-study {
+    width: 670px;
+  }
+
+  .right {
+    margin-bottom: 50px;
+  }
+  .vyakhya{
+    width: 690px;
+  }
+}
+
+
+@media (max-width: 750px) {
+  .video-container {
+    min-width: 300px;
+    max-width: 650px;
+  }
+
+  .left1 {
+    min-width: 300px;
+    max-width: 650px;
+    margin-left: 20px;
+  }
+
+  .lecture-description-study {
+    width: 630px;
+    color: white;
+  }
+
+  .lecture-title-study {
+    width: 630px;
+  }
+  .vyakhya{
+    width: 650px;
+  }
+}
+
+@media (max-width: 680px) {
+  .video-container {
+    min-width: 300px;
+    max-width: 500px;
+  }
+
+  .left1 {
+    min-width: 300px;
+    max-width: 500px;
+    margin-left: 20px;
+  }
+
+  .lecture-description-study {
+    width: 480px;
+    color: white;
+  }
+
+  .lecture-title-study {
+    width: 480px;
+  }
+  .vyakhya{
+    width: 500px;
+  }
+}
+
+@media (max-width: 570px) {
+  .video-container {
+    min-width: 300px;
+    max-width: 450px;
+  }
+
+  .left1 {
+    min-width: 300px;
+    max-width: 450px;
+    margin-left: 20px;
+  }
+
+  .lecture-description-study {
+    width: 430px;
+    color: white;
+  }
+
+  .lecture-title-study {
+    width: 430px;
+  }
+  .vyakhya{
+    width: 450px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-container {
+    min-width: 200px;
+    max-width: 400px;
+  }
+
+  .left1 {
+    min-width: 200px;
+    max-width: 400px;
+    margin-left: 20px;
+  }
+
+  .lecture-description-study {
+    width: 380px;
+    color: white;
+  }
+
+  .lecture-title-study {
+    width: 380px;
+  }
+  .vyakhya{
+    width: 400px;
+  }
+}
+
+@media (max-width: 400px) {
+  .video-container {
+    min-width: 150px;
+    max-width: 350px;
+  }
+
+  .left1 {
+    min-width: 150px;
+    max-width: 350px;
+    margin-left: 20px;
+  }
+
+  .lecture-description-study {
+    width: 330px;
+    color: white;
+  }
+
+  .lecture-title-study {
+    width: 330px;
+  }
+  .vyakhya{
+    width: 350px;
+  }
+}
+.lecture-title-study {
+  border-radius: 12px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.vyakhya{
+  max-width: 1000px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid white; */
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+.left1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-left: 30px;
 }

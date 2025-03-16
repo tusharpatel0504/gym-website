@@ -205,7 +205,7 @@ const Register = () => {
 
   return (
     <>
-    <div className="maincontainer">
+    <div className="maincontainer-register">
     <div className="auth-page">        
         <div className="auth-form">
         <h1 className="h1registor">Nice <span className="and">&</span> Easy</h1>

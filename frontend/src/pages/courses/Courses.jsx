@@ -10,8 +10,8 @@ const Courses = () => {
   return (
     <div className="courses">
       <div className="course-heading">
-      <h2>What Would You Like To </h2>
-      <h3>learn?</h3>
+      <h2>What Would You Like To <span>learn?</span> </h2>
+     
       </div>
      
 

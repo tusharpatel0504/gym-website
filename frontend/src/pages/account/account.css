@@ -1,6 +1,6 @@
 
 .profile-container {
-  
+  /* overflow: hidden; */
   padding-top: 180px;
   display: flex;
   justify-content: center;

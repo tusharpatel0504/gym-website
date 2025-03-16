@@ -48,14 +48,12 @@
     align-items: center;
     justify-content: center;
 }
-
 .record_cont_number {
     font-size: 1.8rem;
     margin-top: 5px;
     font-weight: bold;
     color: #fff;
 }
-
 .record_cont_label {
     font-size: 1rem;
     opacity: 0.9;

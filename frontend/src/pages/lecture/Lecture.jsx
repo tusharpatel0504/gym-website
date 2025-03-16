@@ -166,7 +166,7 @@ const Lecture = ({ user }) => {
   const handleClose = () => {
     setShow(false);
   };
-  
+
   async function fetchProgress() {
     try {
       const { data } = await axios.get(
@@ -207,14 +207,14 @@ const Lecture = ({ user }) => {
 
   const handleTimelineClick = useCallback((e) => {
     if (!timelineContainerRef.current) return;
-    
+
     const rect = timelineContainerRef.current.getBoundingClientRect();
     const percent = Math.min(Math.max(0, e.clientX - rect.left), rect.width) / rect.width;
-    
+
     if (seekDebounceRef.current) {
       clearTimeout(seekDebounceRef.current);
     }
-    
+
     seekDebounceRef.current = setTimeout(() => {
       playerRef.current?.seekTo(percent, 'fraction');
     }, 50);
@@ -253,11 +253,11 @@ const Lecture = ({ user }) => {
   const handleKeyDown = useCallback((e) => {
     // Check if the focused element is an input field
     const isInputFocused = document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA';
-  
+
     if (isInputFocused) {
       return; // Do nothing if an input field is focused
     }
-  
+
     const keyHandlers = {
       Space: () => setPlaying(prev => !prev),
       KeyK: () => setPlaying(prev => !prev),
@@ -280,7 +280,7 @@ const Lecture = ({ user }) => {
       ArrowUp: () => handleVolumeChange({ target: { value: Math.min(1, volume + 0.1) } }),
       ArrowDown: () => handleVolumeChange({ target: { value: Math.max(0, volume - 0.1) } }),
     };
-  
+
     if (keyHandlers[e.code]) {
       e.preventDefault();
       keyHandlers[e.code]();
@@ -319,14 +319,14 @@ const Lecture = ({ user }) => {
   useEffect(() => {
     fetchLectures();
     fetchProgress();
-    
+
     const handleMouseMove = showControls;
     const handleKeyPress = showControls;
-    
+
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("keydown", handleKeyPress);
     document.addEventListener("keydown", handleKeyDown);
-    
+
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("keydown", handleKeyPress);
@@ -359,110 +359,110 @@ const Lecture = ({ user }) => {
   return (
     <>
       {loading ? (
-      <Loading />
-    ) : (
-      <>
-        <div className="lecture-page">
-          {/* Add Lecture Form */}
-          {show && (
-            <div className="back-add-lecture">
-              {/* Semi-transparent overlay */}
-              <div className="overlay" onClick={handleClose}></div>
-              <div className="lecture-form-2">
-                <h2>Add Lecture</h2>
-                <button className="close-button-lecture" onClick={handleClose}>×</button>
-                <form onSubmit={submitHandler}>
-                  <label htmlFor="text">Title</label>
-                  <input
-                    type="text"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    required
-                  />
+        <Loading />
+      ) : (
+        <>
+          <div className="lecture-page">
+            {/* Add Lecture Form */}
+            {show && (
+              <div className="back-add-lecture">
+                {/* Semi-transparent overlay */}
+                <div className="overlay" onClick={handleClose}></div>
+                <div className="lecture-form-2">
+                  <h2>Add Lecture</h2>
+                  <button className="close-button-lecture" onClick={handleClose}>×</button>
+                  <form onSubmit={submitHandler}>
+                    <label htmlFor="text">Title</label>
+                    <input
+                      type="text"
+                      value={title}
+                      onChange={(e) => setTitle(e.target.value)}
+                      required
+                    />
 
-                  <label htmlFor="text">Description</label>
-                  <input
-                    type="text"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
-                    required
-                  />
+                    <label htmlFor="text">Description</label>
+                    <input
+                      type="text"
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                      required
+                    />
 
-                  <input
-                    type="file"
-                    placeholder="choose video"
-                    onChange={changeVideoHandler}
-                    required
-                  />
+                    <input
+                      type="file"
+                      placeholder="choose video"
+                      onChange={changeVideoHandler}
+                      required
+                    />
 
-                  {videoPrev && (
-                    <video
-                      src={videoPrev}
-                      alt="preview"
-                      width={300}
-                      controls
-                    ></video>
-                  )}
+                    {videoPrev && (
+                      <video
+                        src={videoPrev}
+                        alt="preview"
+                        width={300}
+                        controls
+                      ></video>
+                    )}
 
-                  {uploadProgress > 0 && (
-                    <div className="upload-progress">
-                      <progress value={uploadProgress} max={100}></progress>
-                      <span>{uploadProgress}%</span>
-                    </div>
-                  )}
-
-                  <button
-                    disabled={btnLoading}
-                    type="submit"
-                    className="common-btn"
-                  >
-                    {btnLoading ? "Please Wait..." : "Add"}
-                  </button>
-                </form>
-              </div>
-            </div>
-          )}
-<div className="left1">
-            {lecLoading ? (
-              <Loading />
-            ) : (
-              <>
-                {lecture.video ? (
-                  <>
-                    <div
-                      ref={containerRef}
-                      className={`video-container ${!playing ? "paused" : ""} ${isFullScreen ? "full-screen" : ""}`}
-                      data-volume-level={muted ? "muted" : volume > 0.5 ? "high" : "low"}
-                      onClick={handleVideoClick}
-                    >
-                      <ReactPlayer
-                        ref={playerRef}
-                        url={lecture.video}
-                        playing={!show && playing} // Pause video when form is open
-                        muted={muted}
-                        volume={volume}
-                        playbackRate={playbackRate}
-                        width="100%"
-                        height="100%"
-                        progressInterval={100}
-                        onProgress={handleProgress}
-                        onDuration={setDuration}
-                        onContextMenu={(e) => e.preventDefault()}
-                        config={{
-                          file: {
-                            attributes: {
-                              controlsList: 'nodownload'
-                            }
-                          }
-                        }}
-                      />
-
-                      <div className="video-overlay">
-                        <FaPlay className="play-icon" />
+                    {uploadProgress > 0 && (
+                      <div className="upload-progress">
+                        <progress value={uploadProgress} max={100}></progress>
+                        <span>{uploadProgress}%</span>
                       </div>
+                    )}
 
-                      <div className={`video-controls-container ${controlsVisible ? "visible" : ""}`}>
-           
+                    <button
+                      disabled={btnLoading}
+                      type="submit"
+                      className="common-btn"
+                    >
+                      {btnLoading ? "Please Wait..." : "Add"}
+                    </button>
+                  </form>
+                </div>
+              </div>
+            )}
+            <div className="left1">
+              {lecLoading ? (
+                <Loading />
+              ) : (
+                <>
+                  {lecture.video ? (
+                    <>
+                      <div
+                        ref={containerRef}
+                        className={`video-container ${!playing ? "paused" : ""} ${isFullScreen ? "full-screen" : ""}`}
+                        data-volume-level={muted ? "muted" : volume > 0.5 ? "high" : "low"}
+                        onClick={handleVideoClick}
+                      >
+                        <ReactPlayer
+                          ref={playerRef}
+                          url={lecture.video}
+                          playing={!show && playing} // Pause video when form is open
+                          muted={muted}
+                          volume={volume}
+                          playbackRate={playbackRate}
+                          width="100%"
+                          height="100%"
+                          progressInterval={100}
+                          onProgress={handleProgress}
+                          onDuration={setDuration}
+                          onContextMenu={(e) => e.preventDefault()}
+                          config={{
+                            file: {
+                              attributes: {
+                                controlsList: 'nodownload'
+                              }
+                            }
+                          }}
+                        />
+
+                        <div className="video-overlay">
+                          <FaPlay className="play-icon" />
+                        </div>
+
+                        <div className={`video-controls-container ${controlsVisible ? "visible" : ""}`}>
+
                           <div
                             ref={timelineContainerRef}
                             className="timeline-container"
@@ -482,9 +482,9 @@ const Lecture = ({ user }) => {
                           >
                             <div className="timeline">
                               {hoverTime !== null && (
-                                <div 
-                                  className="hover-time" 
-                                  style={{ 
+                                <div
+                                  className="hover-time"
+                                  style={{
                                     left: `${(hoverTime / duration) * 100}%`
                                   }}
                                 >
@@ -499,11 +499,11 @@ const Lecture = ({ user }) => {
                             <button onClick={() => setPlaying(!playing)}>
                               {playing ? <FaPause /> : <FaPlay />}
                             </button>
-                            
+
                             <button onClick={() => playerRef.current?.seekTo(currentTime - 10)}>
                               <FaBackward />
                             </button>
-                            
+
                             <button onClick={() => playerRef.current?.seekTo(currentTime + 10)}>
                               <FaForward />
                             </button>
@@ -549,62 +549,61 @@ const Lecture = ({ user }) => {
                         </div>
                       </div>
 
-                      <p className="lecture-title-study">{lecture.title}</p>
-                    <p className="lecture-description-study">{lecture.description}</p>
-                  </>
-                ) : (
-                  <h1 className="pleasetxt">Please Select a Lecture</h1>
-                )}
-              </>
-            )}
-          </div>
+                      <div className="vyakhya"><div className="lecture-title-study">{lecture.title}</div>
+                      <div className="lecture-description-study">{lecture.description}</div></div>
+                    </>
+                  ) : (
+                    <h1 className="pleasetxt">Please Select a Lecture</h1>
+                  )}
+                </>
+              )}
+            </div>
 
-          {/* Right Section (Lecture List) */}
-          <div className="right">
-            {user && user.role === "admin" && (
-              <button className="common-btn-addll" onClick={() => {
-                setShow(!show);
-                setPlaying(false); // Pause video when form is opened
-              }}>
-                {show ? "Close" : "Add Lecture +"}
-              </button>
-            )}
+            {/* Right Section (Lecture List) */}
+            <div className="right">
+              {user && user.role === "admin" && (
+                <button className="common-btn-addll" onClick={() => {
+                  setShow(!show);
+                  setPlaying(false); // Pause video when form is opened
+                }}>
+                  {show ? "Close" : "Add Lecture +"}
+                </button>
+              )}
               {lectures && lectures.length > 0 ? (
                 lectures.map((e, i) => (
                   <>
-                  <div
-                  className="button-container">
                     <div
-                      onClick={() => fetchLecture(e._id)}
-                      key={i}
-                      className={`lecture-number ${
-                        lecture._id === e._id && "active"
-                      }`}
-                    >
-                      {i + 1}. {e.title}{" "}
-                      {progress[0] &&
-                        progress[0].completedLectures.includes(e._id) && (
-                          <span
-                            style={{
-                              background: "red",
-                              padding: "2px",
-                              borderRadius: "6px",
-                              color: "greenyellow",
-                            }}
-                          >
-                            <TiTick />
-                          </span>
-                        )}
-                    </div>
-                    {user && user.role === "admin" && (
-                      <button
-                        className="common-btn-delete"
-                        onClick={() => deleteHandler(e._id)}
+                      className="button-container">
+                      <div
+                        onClick={() => fetchLecture(e._id)}
+                        key={i}
+                        className={`lecture-number ${lecture._id === e._id && "active"
+                          }`}
                       >
-                        Delete 
-                      </button>
-                    )}
-                  </div>
+                        {i + 1}. {e.title}{" "}
+                        {progress[0] &&
+                          progress[0].completedLectures.includes(e._id) && (
+                            <span
+                              style={{
+                                background: "red",
+                                padding: "2px",
+                                borderRadius: "6px",
+                                color: "greenyellow",
+                              }}
+                            >
+                              <TiTick />
+                            </span>
+                          )}
+                      </div>
+                      {user && user.role === "admin" && (
+                        <button
+                          className="common-btn-delete"
+                          onClick={() => deleteHandler(e._id)}
+                        >
+                          Delete
+                        </button>
+                      )}
+                    </div>
                   </>
                 ))
               ) : (

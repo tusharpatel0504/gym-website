@@ -10,7 +10,7 @@
   }
   
   /* Main Container */
-  .maincontainer {
+  .maincontainer-register {
     margin-top: 120px;
     display: flex;
     justify-content: center;
@@ -157,6 +157,9 @@
       border-radius: 10px 10px 10px 10px;
       
     }
+    .maincontainer-register {
+      margin-top: -30px;
+    }
   
     .image {
       width: 100%; /* Full width for smaller screens */
@@ -186,7 +189,9 @@
     .auth-form {
       padding: 20px; /* Reduce padding for very small screens */
     }
-  
+    .maincontainer-register {
+      margin-top: -30px;
+    }
     .h1registor{
       font-size: 1.5rem; /* Smaller font size for very small screens */
     }
