@@ -29,13 +29,28 @@ const EditCourseModal = ({ show, handleClose, courseId, onCourseUpdated }) => {
   const [loading, setLoading] = useState(false);
   const [step, setStep] = useState(1); // Step tracking
 
+  // useEffect(() => {
+  //   if (courseId && show) {
+  //     const fetchCourse = async () => {
+  //       try {
+  //         const response = await axios.get(`${server}/api/course/${courseId}`);
+  //         setCourse(response.data);
+  //         setImagePrev(response.data.image);
+  //       } catch (error) {
+  //         console.error('Error fetching course data', error);
+  //       }
+  //     };
+  //     fetchCourse();
+  //   }
+  // }, [courseId, show]);
+
   useEffect(() => {
     if (courseId && show) {
       const fetchCourse = async () => {
         try {
           const response = await axios.get(`${server}/api/course/${courseId}`);
-          setCourse(response.data);
-          setImagePrev(response.data.image);
+          setCourse(response.data.course);
+          setImagePrev(response.data.course.image);
         } catch (error) {
           console.error('Error fetching course data', error);
         }
@@ -43,6 +58,7 @@ const EditCourseModal = ({ show, handleClose, courseId, onCourseUpdated }) => {
       fetchCourse();
     }
   }, [courseId, show]);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -139,7 +155,7 @@ const EditCourseModal = ({ show, handleClose, courseId, onCourseUpdated }) => {
               <div className="form-group">
                 <label>Upload Thumbnail</label>
                 <input type="file" onChange={changeImageHandler} accept="image/*" />
-                {imagePrev && <img src={imagePrev} alt="Preview" className="image-preview" />}
+                {/* {imagePrev && <img src={imagePrev} alt="Preview" className="image-preview" />} */}
               </div>
 
               <div className="button-group">
