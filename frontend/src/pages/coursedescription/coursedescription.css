@@ -1,200 +1,245 @@
-.course-description {
-  margin-top: 10rem;
-  padding: 1rem;
+/* 🚀 Course Section */
+.course-description-classnms {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4rem 8%;
+  position: relative;
+  flex-direction: row; 
+  gap: 3rem; 
+  width: 100%;
+  min-height: 800px;
+  overflow: hidden;
+}
+.course-text-classnms {
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: fit-content;
+}
+.course-text-classnms h2 {
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.course-text-classnms p{
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.course-description-classnms::before,
+.course-description-classnms::after,
+.course-description-classnms .center-glow-classnms {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  filter: blur(100px);
+  z-index: -1;
+  opacity: 0.7;
 }
 
-.upper-course-description {
+/* Top Left Glow */
+.course-description-classnms::before {
+  background: radial-gradient(circle, rgba(255, 0, 255, 0.5) 20%, transparent 80%);
+  top: -50px;
+  left: -50px;
+}
+
+/* Bottom Right Glow */
+.course-description-classnms::after {
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.5) 20%, transparent 80%);
+  bottom: -50px;
+  right: -50px;
+}
+
+/* Center Glow */
+.course-description-classnms .center-glow-classnms {
+  background: radial-gradient(circle, rgba(255, 149, 50, 0.6) 30%, transparent 90%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 📢 Announcement */
+.announcement-classnms {
+  display: inline-block;
+  background: #222;
+  color: #ff4747;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* 🔥 Course Text */
+.course-text-classnms {
+  flex: 1;
+  text-align: left;
+  max-width: 50%;
+}
+
+.course-text-classnms h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.course-text-classnms p {
+  font-size: 1.2rem;
+  color: #d1d1d1;
+  margin-top: 1rem;
+  max-width: 500px;
+}
+
+/* 🎯 Buttons */
+.course-buttons-classnms {
+  display: flex;
+  justify-content: start;
+  margin-top: 1.5rem;
+  gap: 1rem;
+}
+
+.btn-classnms {
+  padding: 0.9rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  border: none;
+  text-transform: uppercase;
+  background: #fff;
+  color: #000;
+}
+
+.btn-classnms:hover {
+  background: #ff4747;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0px 5px 10px rgba(255, 71, 71, 0.3);
+}
+
+/* 📷 Course Image */
+.course-image-classnms {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  max-width: 30%;
-  margin: auto;
-  border-radius: 10px;
-  padding: 1rem;
-  background-color: #343434;
-}
-
-.course-description-course-header {
+  align-items: center;
   text-align: center;
-  border-right: 0.5px solid white;
-  padding: 0.5rem;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+  overflow: hidden;
+  width: 550px;
+  height: 380px;
+  background-position: center;
+  background-size: cover;
 }
 
-.course-description-course-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-.course-description-course-info {
-  text-align: left;
-}
-
-.course-description-course-info h2 {
-  color: white;
-  margin-top: 0.5rem;
-}
-
-.course-description-course-info p {
-  color: white;
-  font-size: 1.25rem;
-  margin-top: -0.75rem;
-}
-
-.course-description-course-info span {
-  color: red;
-  font-weight: 600;
-}
-
-.descrip-heading span {
-  color: red;
-  font-weight: 600;
-  font-size: 1.5rem;
-  text-decoration: underline;
-}
-
-.course-description-description {
-  text-align: left;
-  padding: 1rem;
-  color: white;
+.course-image-classnms img {
   width: 100%;
-}
-
-.course-description-description p {
-  color: white;
-  font-size: 1rem;
-}
-
-.getStarted-course-description {
-  font-size: 1.5rem;
-  text-align: center;
-  color: #ec610b;
-  font-weight: 600;
-}
-
-.course-description-buy-btn {
-  background-color: #ec610b;
-  color: white;
-  width: 12.5rem;
-  height: 3.5rem;
-  border: none;
+  height: 100%;
+  object-fit: cover;
   border-radius: 10px;
-  font-size: 1.25rem;
-  font-weight: 600;
-  transition: 0.3s ease-in-out;
+  box-shadow: 0px 5px 15px rgba(255, 71, 71, 0.3);
 }
 
-.course-description-buy-btn:hover {
-  box-shadow: rgba(0, 0, 0, 0.35) 10px -50px 36px -28px inset;
-  cursor: pointer;
-}
-
-.btnbtncourse-description {
-  max-width: 90%;
-  margin: auto;
-  text-align: center;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
-.price-tag {
-  color: white;
-  font-size: 2rem;
-  font-weight: 600;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-/* Ultra-Wide Screens (4K & 8K) */
-@media screen and (min-width: 1920px) {
-  .upper-course-description {
-    max-width: 1400px;
-  }
-}
-
-/* Large Screens (Desktops & Laptops) */
-@media screen and (max-width: 1230px) {
-  .upper-course-description {
-    max-width: 1000px;
-  }
-}
-
-@media screen and (max-width: 1050px) {
-  .upper-course-description {
-    max-width: 800px;
-  }
-}
-
-/* Medium Screens (Tablets) */
-@media screen and (max-width: 850px) {
-  .upper-course-description {
-    max-width: 90%;
+/* 📱 Responsive Design */
+@media screen and (max-width: 1024px) {
+  .course-description-classnms {
     flex-direction: column;
-    align-items: center;
+    text-align: center;
+    padding: 3rem 6%;
+    gap: 2rem;
+  }
+  .course-image-classnms{
+    margin-top:150px ;
+  }
+
+  .course-text-classnms {
+    max-width: 90%;
     text-align: center;
   }
 
-  .course-description-course-header {
-    border: none;
-    max-width: 500px;
+  .course-buttons-classnms {
+    justify-content: center;
   }
 
-  .course-description-course-image {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 10px;
-  }
-
-  .course-description-description {
-    border-top: 1px solid white;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    max-width: 500px;
+  .course-image-classnms {
+    width: 90%;
+    height: auto;
   }
 }
 
-/* Small Screens (Mobile Phones) */
-@media screen and (max-width: 650px) {
-  .upper-course-description,
-  .course-description-course-header {
-    max-width: 90%;
+@media screen and (max-width: 768px) {
+  .course-description-classnms {
+    padding: 2rem 5%;
   }
 
-  .course-description-course-image {
-    width: 100%;
-    max-width: 380px;
-  }
-}
-
-/* Extra Small Screens (Very Small Phones & Watches) */
-@media screen and (max-width: 440px) {
-  .upper-course-description,
-  .course-description-course-header {
-    max-width: 95%;
+  .course-text-classnms h2 {
+    font-size: 2.2rem;
   }
 
-  .course-description-course-image {
-    max-width: 100%;
-  }
-
-  .course-description-description {
-    max-width: 95%;
-  }
-}
-
-/* Ultra-Small Screens (Below 320px) */
-@media screen and (max-width: 280px) {
-  .course-description-buy-btn {
-    width: 100%;
+  .course-text-classnms p {
     font-size: 1rem;
   }
 
-  .getStarted-course-description {
-    font-size: 1.25rem;
+  .btn-classnms {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  /* .course-text-classnms{
+    margin-top: 88px;
+  } */
+
+  .course-image-classnms img {
+    max-width: 100%;
+    height: auto;
+  }
+  /* .course-text-classnms{
+    margin-top: 88px; */
+    
+  
+}
+
+@media screen and (max-width: 480px) {
+  .course-description-classnms {
+    padding: 2rem 4%;
+    gap: 1.5rem;
+  }
+  .course-text-classnms{
+    margin-top: -220px;
+    margin-bottom: 0px;
+    
   }
 
-  .price-tag {
-    font-size: 1.5rem;
+  .course-text-classnms h2 {
+    font-size: 1.8rem;
+  }
+
+  .course-text-classnms p {
+    font-size: 0.9rem;
+  }
+
+  .btn-classnms {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.8rem;
+  }
+
+  .course-image-classnms {
+    margin-top: 55px;
+    width: 100%;
   }
 }

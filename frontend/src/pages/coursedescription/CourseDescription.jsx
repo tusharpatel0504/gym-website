@@ -11,11 +11,9 @@ import Loading from "../../components/loading/Loading";
 const CourseDescription = ({ user }) => {
   const params = useParams();
   const navigate = useNavigate();
-
   const [loading, setLoading] = useState(false);
 
   const { fetchUser } = UserData();
-
   const { fetchCourse, course, fetchCourses, fetchMyCourse } = CourseData();
 
   useEffect(() => {
@@ -32,24 +30,21 @@ const CourseDescription = ({ user }) => {
       `${server}/api/course/checkout/${params.id}`,
       {},
       {
-        headers: {
-          token,
-        },
+        headers: { token },
       }
     );
 
     const options = {
-      key: "rzp_test_WpTfHscPGFJgHQ", // Enter the Key ID generated from the Dashboard
-      amount: order.id, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      key: "rzp_test_WpTfHscPGFJgHQ",
+      amount: order.id,
       currency: "INR",
-      name: "Nice and Easy", //your business name
+      name: "Nice and Easy",
       description: "Train with us",
-      image: "../../assets/logo.png", // Your logo
-      order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      image: "../../assets/logo.png",
+      order_id: order.id,
 
       handler: async function (response) {
-        const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
-          response;
+        const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = response;
 
         try {
           const { data } = await axios.post(
@@ -60,9 +55,7 @@ const CourseDescription = ({ user }) => {
               razorpay_signature,
             },
             {
-              headers: {
-                token,
-              },
+              headers: { token },
             }
           );
 
@@ -77,15 +70,11 @@ const CourseDescription = ({ user }) => {
           setLoading(false);
         }
       },
-      theme: {
-        color: "#8a4baf",
-      },
+      theme: { color: "#8a4baf" },
     };
     const razorpay = new window.Razorpay(options);
-
     razorpay.open();
   };
-
 
   return (
     <>
@@ -94,40 +83,23 @@ const CourseDescription = ({ user }) => {
       ) : (
         <>
           {course && (
-            <div className="course-description">
-              <div className="upper-course-description">
-                <div className="course-description-course-header">
-                  <img
-                    src={`${course.image}`}
-                    alt=""
-                    className="course-description-course-image"
-                  />
-                  <div className="course-description-course-info">
-                    <h2>{course.title}</h2>
-                    <p><span>Instructor:</span> {course.createdBy}</p>
-                    <p><span>Duration:</span> {course.duration} weeks</p>
-                  </div>
-                </div>
-
-                <div className="course-description-description">
-                  <div className="descrip-heading" ><span  >Course Description:</span><p>{course.description}</p></div>
-
-                  <div className="getStarted-course-description" >Let's get started with course At <span className="price-tag" >₹{course.price}</span></div>
+            <div className="course-description-classnms">
+              <div className="course-image-classnms">
+                <img src={course.image} alt="Course Preview" />
+              </div>
+              <div className="course-text-classnms">
+                <h2>Master DSA like never before</h2>
+                <p>
+                  Join thousands of students who are transforming their coding careers with our
+                  comprehensive Data Structures and Algorithms course.
+                </p>
+                <div className="course-buttons-classnms">
+                  <button onClick={checkoutHandler} className="btn-classnms red">Buy Course</button>
                 </div>
               </div>
 
-              {user && user.subscription.includes(course._id) ? (
-                <div className="btnbtncourse-description"><button
-                onClick={() => navigate(`/course/study/${course._id}`)}
-                className="course-description-start-btn course-description-buy-btn"
-              >
-                Start Training
-              </button></div>
-              ) : (
-                <div className="btnbtncourse-description"><button onClick={checkoutHandler} className="course-description-buy-btn">
-                Buy Now
-              </button></div>
-              )}
+              {/* Right Section - Course Image */}
+              
             </div>
           )}
         </>
