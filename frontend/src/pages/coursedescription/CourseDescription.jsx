@@ -94,6 +94,8 @@ const CourseDescription = ({ user }) => {
                   comprehensive Data Structures and Algorithms course.
                 </p>
                 <div className="course-buttons-classnms">
+                <h2><span>Price</span>&nbsp;- ₹{course.price}</h2>
+
                   <button onClick={checkoutHandler} className="btn-classnms red">Buy Course</button>
                 </div>
               </div>
