@@ -1,22 +1,18 @@
 .sidebar {
-  background-color: black;
+  
   padding-top: 180px;
   width: 250px;
   height: 100vh;
   left: 0;
   color: white;
-  border-right: 1px solid rgb(0, 0, 0);
-
-  @media (max-width: 768px) {
-    width: 30px;
-  }
-
+  /* border-right: 1px solid rgb(0, 0, 0); */
   ul {
     list-style: none;
     padding: 0;
 
     li {
-      background-color: #B34A09;
+      background: rgb(57, 56, 56);
+      border-radius: 5px;
       margin-bottom: 10px;
       cursor: pointer;
       padding: 12px;

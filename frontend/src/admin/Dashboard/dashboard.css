@@ -1,5 +1,5 @@
 .dashboard-main {
-  background-color: rgba(1, 1, 1, 0.837);
+  
   display: flex;
   width: 100%;
   justify-content: center;
@@ -11,7 +11,8 @@
   width: 150px;
   height: 100px;
   margin-left: 20px;
-  background-color: #B34A09;
+  background-color: #ffffff3a;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 0px 15px;
   padding: 5px;
   border-radius: 5px;
   text-align: center;
@@ -20,7 +21,7 @@
 }
 
 .dashboard-box:hover {
-  background-color: #562100;
+  background-color: #5e5d5d;
 }
 
 .dashboard-content {
@@ -72,7 +73,9 @@
   width: 150px;
   height: 100px;
   margin-left: 20px;
-  background-color: #B34A09;
+  /* background-color: #B34A09; */
+  background-color: #ffffff3a;
+  box-shadow: rgba(255, 255, 255, 0.35) 0px 0px 15px;
   padding: 5px;
   margin-top: 5px;
   border-radius: 5px;
@@ -83,5 +86,17 @@
 
 .dashboard-button:hover {
   cursor: pointer;
-  background-color: #562100;
+  background-color: #5e5d5d;
+}
+.dashboard-admin::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: 50px;
+  width: 200%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(145, 9, 88, 0.3) 10%, rgba(0, 204, 255, 0.2) 50%, transparent 80%);
+  filter: blur(150px);
+  z-index: -1;
+  animation: glowMove 10s infinite alternate;
 }

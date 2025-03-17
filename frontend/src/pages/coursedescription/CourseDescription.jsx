@@ -88,10 +88,9 @@ const CourseDescription = ({ user }) => {
                 <img src={course.image} alt="Course Preview" />
               </div>
               <div className="course-text-classnms">
-                <h2>Master DSA like never before</h2>
+                <h2>{course.title}</h2>
                 <p>
-                  Join thousands of students who are transforming their coding careers with our
-                  comprehensive Data Structures and Algorithms course.
+                  {course.description}
                 </p>
                 <div className="course-buttons-classnms">
                 <h2><span>Price</span>&nbsp;- ₹{course.price}</h2>
