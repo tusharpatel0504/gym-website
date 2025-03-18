@@ -1,0 +1,154 @@
+.contact-submissions123 {
+    z-index: -1;
+    margin-top: -605px;
+    margin-left: 290px;
+    width: 80%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Make sure it's responsive on small screens */
+    box-sizing: border-box;
+}
+
+.heading123 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.search-input123 {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: border-color 0.3s;
+}
+
+.search-input123:focus {
+    border-color: #92380c;
+    outline: none;
+}
+
+.table-container123 {
+    max-height: 500px;
+    overflow-y: scroll;
+    /* Added box-sizing for more reliable responsive behavior */
+    box-sizing: border-box;
+}
+
+.table123 {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.header-row123 {
+    background-color: #92380c;
+    color: white;
+}
+
+.table-header123, .table-cell123 {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.table-header123 {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.table-cell123 {
+    color: #333;
+    word-wrap: break-word;
+}
+
+.table-row123:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table-row123:nth-child(odd) {
+    background-color: #fff;
+}
+
+@media (max-width: 1024px) {
+    .contact-submissions123 {
+        width: 90%;  /* Adjust width for medium screens */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .search-input123 {
+        font-size: 14px;  /* Adjust font size for medium screens */
+        max-width: 100%;  /* Make the input take up more space on medium screens */
+    }
+
+    .table123 {
+        font-size: 14px;  /* Slightly smaller font for readability */
+    }
+
+    .table-header123, .table-cell123 {
+        padding: 10px;  /* Less padding for compactness */
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-submissions123 {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .heading123 {
+        font-size: 1.5rem; /* Smaller heading on smaller screens */
+    }
+
+    .search-input123 {
+        font-size: 14px;
+        padding: 8px;  /* Slightly smaller padding */
+    }
+
+    .table123 {
+        font-size: 12px;  /* Further decrease font size */
+    }
+
+    .table-header123, .table-cell123 {
+        padding: 8px;  /* Reduce padding for smaller screens */
+    }
+
+    .table-container123 {
+        max-height: 400px;  /* Adjust table height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-submissions123 {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .heading123 {
+        font-size: 1.25rem;  /* Further reduce heading size */
+    }
+
+    .search-input123 {
+        font-size: 12px;  /* Smaller input text */
+        padding: 6px;  /* Further decrease padding */
+    }
+
+    .table123 {
+        font-size: 10px;  /* Smallest font size for readability */
+    }
+
+    .table-header123, .table-cell123 {
+        padding: 6px;  /* Minimal padding for mobile screens */
+    }
+}

@@ -1,0 +1,117 @@
+/* auth.css */
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* body {
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /
+    min-height: 100vh;
+    padding: 80px 20px 20px;  Added top padding for navbar space 
+  } */
+  
+  .reset-container {
+    margin-top: 100px;
+    margin-bottom: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .reset-card {
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    transition: transform 0.3s ease;
+    margin-top: 20px; /* Space below navbar */
+  }
+  
+  /* .reset-card:hover {
+    transform: translateY(-5px);
+  } */
+  
+  .reset-card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333333;
+    font-size: 1.8rem;
+  }
+  
+  .reset-card label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 600;
+  }
+  
+  .reset-card input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .reset-card input:focus {
+    border-color: #74ebd5;
+    box-shadow: 0 0 8px rgba(116, 235, 213, 0.5);
+    outline: none;
+  }
+  
+  .reset-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #eb6918;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .reset-btn:hover {
+    background-color: #893212;
+    /* transform: translateY(-2px); */
+  }
+  
+  .reset-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    body {
+      padding: 100px 10px 20px; /* More top padding for smaller screens */
+    }
+  
+    .reset-card {
+      padding: 20px 15px;
+      margin-top: 10px; /* Adjusted for compact view */
+    }
+  
+    .reset-card h2 {
+      font-size: 1.5rem;
+    }
+  
+    .reset-btn {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  }
+  

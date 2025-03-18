@@ -1,0 +1,133 @@
+footer {
+  border-top: 2px solid white;
+  padding-top: 20px;
+  background-color: #000000;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.left, .right1 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.left h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.left p, .left a {
+  font-size: 14px;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.right1 h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.right1 ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.right1 ul li {
+  margin: 8px 0;
+}
+
+.right1 ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+.right1 ul li a:hover {
+  text-decoration: underline;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-form input, .contact-form textarea {
+  background-color: white;
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #b34a09;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #8c3707;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .left, .right1 {
+    width: 45%;
+    text-align: left;
+  }
+
+  .contact-form {
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 1024px) {
+  .left h3, .right1 h3 {
+    font-size: 2rem;
+  }
+
+  .left p, .left a, .right1 ul li a {
+    font-size: 16px;
+  }
+
+  .contact-form input, .contact-form textarea {
+    max-width: 500px;
+  }
+
+  .contact-form button {
+    padding: 12px 24px;
+  }
+}

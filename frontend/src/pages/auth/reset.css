@@ -1,0 +1,109 @@
+/* auth.css */
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .auth-form {
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    transition: transform 0.3s ease;
+  }
+  
+  .auth-form:hover {
+    transform: translateY(-5px);
+  }
+  
+  .auth-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333333;
+    font-size: 1.8rem;
+  }
+  
+  .auth-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 600;
+  }
+  
+  .auth-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .auth-form input:focus {
+    border-color: #74ebd5;
+    box-shadow: 0 0 8px rgba(116, 235, 213, 0.5);
+    outline: none;
+  }
+  
+  .common-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #74ebd5;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  .common-btn:hover {
+    background-color: #5bc4b7;
+    transform: translateY(-2px);
+  }
+  
+  .common-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 480px) {
+    .auth-form {
+      padding: 20px 15px;
+    }
+  
+    .auth-form h2 {
+      font-size: 1.5rem;
+    }
+  
+    .common-btn {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  }
+  

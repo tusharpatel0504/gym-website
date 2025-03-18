@@ -1,0 +1,118 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content5 {
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.checkbox-container {
+  display: flex;
+
+
+}
+
+.checkbox-container label {
+  margin: 0; /* Removes default margin for better alignment */
+  color: white; /* Ensures the label text is white */
+}
+
+.modal-header {
+ 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.modal-header h2 {
+ color: rgb(0, 0, 0);
+}
+.modal-overlay{
+  z-index: 3;
+}
+.modal-header h2 {
+  margin: 0;
+}
+
+.close-button {
+  color: rgb(0, 0, 0);
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-body {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.form-group {
+  color: white;
+  margin-bottom: 15px;
+}
+.form-group label {
+  color: white;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.next-button,
+.prev-button,
+.submit-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.next-button,
+.submit-button {
+  background-color: #B34A09;
+  color: white;
+}
+
+.prev-button {
+  background-color: #6c757d;
+  color: white;
+}
+
+.next-button:hover,
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.prev-button:hover {
+  background-color: #5a6268;
+}
