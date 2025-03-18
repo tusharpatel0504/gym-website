@@ -112,13 +112,15 @@ const Modal = ({ isOpen, onClose, children }) => {
   return (
     <div className="modal-overlay">
       <div className="modal-container">
-        <button className="modal-close" onClick={onClose}>
-          Close
+        <button className="modal-close" onClick={onClose} title="Close">
+          &times;
         </button>
         {children}
       </div>
     </div>
   );
 };
+
+
 
 export default AdminDashboard;

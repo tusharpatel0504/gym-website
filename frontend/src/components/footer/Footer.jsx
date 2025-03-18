@@ -102,11 +102,7 @@ const Footer = () => {
             <li><a href="#">Teams</a></li>
             <li><a href="#">Contact Us</a></li>
           </ul>
-          <div className="footer-social">
-            <AiFillFacebook />
-            <AiFillTwitterSquare />
-            <AiFillInstagram />
-          </div>
+          
         </div>
       </div>
     </footer>
