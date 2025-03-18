@@ -221,7 +221,7 @@ const sendMail = async (email, subject, data) => {
 export default sendMail;
 
 export const sendForgotMail = async (subject, data) => {
-  console.log("Abhay");
+
   const transport = createTransport({
     host: "smtp.gmail.com",
     port: 465,
@@ -230,6 +230,10 @@ export const sendForgotMail = async (subject, data) => {
       pass: process.env.Password,
     },
   });
+
+  const frontendUrl = process.env.frontendurl;
+  const resetLink=`http://${frontendUrl}/reset-password/${data.token}`;
+  console.log(resetLink);
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -253,7 +257,7 @@ export const sendForgotMail = async (subject, data) => {
       max-width: 600px;
     }
     h1 {
-      color: #5a2d82;
+      color:#b34a09;
     }
     p {
       color: #666666;
@@ -262,7 +266,7 @@ export const sendForgotMail = async (subject, data) => {
       display: inline-block;
       padding: 15px 25px;
       margin: 20px 0;
-      background-color: #5a2d82;
+      background-color: #b34a09;
       color: white;
       text-decoration: none;
       border-radius: 4px;
@@ -274,7 +278,7 @@ export const sendForgotMail = async (subject, data) => {
       text-align: center;
     }
     .footer a {
-      color: #5a2d82;
+      color: #b34a09;
       text-decoration: none;
     }
   </style>
@@ -283,11 +287,13 @@ export const sendForgotMail = async (subject, data) => {
   <div class="container">
     <h1>Reset Your Password</h1>
     <p>Hello,</p>
+    <p>This is Tridev from Nice & Easy,</p>
     <p>You have requested to reset your password. Please click the button below to reset your password.</p>
-    <a href="${process.env.frontendurl}/reset-password/${data.token}" class="button">Reset Password</a>
+    <a href="${resetLink}" class="button">Reset Password</a>
+
     <p>If you did not request this, please ignore this email.</p>
     <div class="footer">
-      <p>Thank you,<br>Your Website Team</p>
+      <p>Thank you,<br></p>
       <p><a href="Nice And Easy">Nice And Easy</a></p>
     </div>
   </div>

@@ -89,7 +89,7 @@ export const checkout = TryCatch(async (req, res) => {
 });
 
 export const paymentVerification = TryCatch(async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const { razorpay_order_id, razorpay_payment_id, razorpay_signature } =
     req.body;
 

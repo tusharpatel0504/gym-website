@@ -27,7 +27,7 @@
 .featured-heading {
   justify-content: center;
   display: flex;
-  font-family: inter;
+  font-family: 'Arial';
   font-size: 50px;
   font-weight: bold;
   color: rgb(0, 0, 0);

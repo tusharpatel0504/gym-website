@@ -132,7 +132,8 @@ export const getAllStats = TryCatch(async (req, res) => {
 });
 
 export const getAllUser = TryCatch(async (req, res) => {
-  const users = await User.find({ _id: { $ne: req.user._id } }).select("-password");
+  const users = await User.find({ _id: { $ne: req.user._id } }).select("-password")
+  .populate("subscription", "title"); // Populate the subscription field with course details
 
   res.json({ users });
 });
@@ -218,7 +219,7 @@ export const getContactForms = async (req, res) => {
   // console.log("Ayaz");
     try {
       const contacts = await Contact.find().sort({ createdAt: -1 });
-      console.log("Abhyay", contacts);
+     
       res.status(200).json(contacts);
     } catch (error) {
       res.status(500).json({

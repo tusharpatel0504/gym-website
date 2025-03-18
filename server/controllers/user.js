@@ -186,7 +186,7 @@
 
 import { User } from "../models/User.js";
 import { Contact } from "../models/Contact.js";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import sendMail, { sendForgotMail,sendContactMail } from "../middlewares/sendMail.js";
 import TryCatch from "../middlewares/TryCatch.js";

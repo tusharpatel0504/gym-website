@@ -98,8 +98,6 @@ const CourseDescription = ({ user }) => {
                   <button onClick={checkoutHandler} className="btn-classnms red">Buy Course</button>
                 </div>
               </div>
-
-              {/* Right Section - Course Image */}
               
             </div>
           )}

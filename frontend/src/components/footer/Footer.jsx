@@ -102,9 +102,11 @@ const Footer = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [isSending, setIsSending] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSending(true);
     try {
       const response = await fetch('http://localhost:5000/api/user/sendContactMail', {
         method: 'POST',
@@ -125,6 +127,8 @@ const Footer = () => {
     } catch (error) {
       console.error('Error:', error);
       alert('Failed to send your message.');
+    }finally {
+      setIsSending(false);
     }
   };
 
@@ -162,6 +166,7 @@ const Footer = () => {
               onChange={(e) => setEmail(e.target.value)} 
               placeholder="Your email" 
               required 
+              disabled={isSending}
             />
             <input 
               type="text" 
@@ -169,14 +174,16 @@ const Footer = () => {
               onChange={(e) => setSubject(e.target.value)} 
               placeholder="Subject" 
               required 
+              disabled={isSending}
             />
             <textarea 
               value={message} 
               onChange={(e) => setMessage(e.target.value)} 
               placeholder="Your message" 
               required 
+              disabled={isSending}
             />
-            <button type="submit">Send</button>
+            <button type="submit">{isSending?"Sending..." : "Send"}</button>
           </form>
         </div>
       </div>

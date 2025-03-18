@@ -13,6 +13,7 @@ import Svideo from "../../components/svideo/svideo.jsx";
 import Record from "../../components/record/record.jsx";
 import CoachingStyle from "../../components/backgroundi/CoachingStyle.jsx";
 import ContactFormModal from "../../components/contactFormModal/contactFormModal";
+import Socialstrip from "../../components/socialstrip/socialstrip.jsx";
 
 import "./home.css";
 import SVideo from "../../components/svideo/svideo.jsx";
@@ -72,6 +73,8 @@ const Home = () => {
             <SVideo/>
             <Testimonials />
             <ContactFormModal show={showContactModal} handleClose={handleCloseContactModal} onFormSubmitted={() => {}} />
+                <Socialstrip/>
+            
         </div>
     );
 };

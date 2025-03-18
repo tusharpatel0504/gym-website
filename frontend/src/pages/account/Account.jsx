@@ -200,7 +200,7 @@ const Account = ({ user }) => {
               Dashboard
             </button>
 
-            {user.role === "admin" && (
+            {(user.role === "admin" )&& (
               <button
                 onClick={() => navigate(`/admin/dashboard`)}
                 className="common-btn"

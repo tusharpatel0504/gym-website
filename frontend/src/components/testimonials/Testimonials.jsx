@@ -1,59 +1,84 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./testimonials.css";
 import aashtaImg from "../../assets/reviewa/aashta.png";
 import ananyaImg from "../../assets/reviewa/ananya.png";
 import ankushImg from "../../assets/reviewa/ankush.png";
 import arnavImg from "../../assets/reviewa/arnav.jfif";
 import blueticks from "../../assets/reviewa/bluetick.png";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const reviews = [
-  { name: "John Doe", review: "An exceptional gym trainer! Their guidance, motivation, and personalized workouts make fitness enjoyable and effective. Highly knowledgeable and supportive—perfect for anyone serious about achieving their fitness goals. Highly recommended!", image: aashtaImg, rating: 5 },
-  { name: "Jane Smith", review: "An exceptional gym trainer! Their guidance, motivation, and personalized workouts make fitness enjoyable and effective. Highly knowledgeable and supportive—perfect for anyone serious about achieving their fitness goals. Highly recommended!", image: ananyaImg, rating: 4 },
-  { name: "Mike Johnson", review: "An exceptional gym trainer! Their guidance, motivation, and personalized workouts make fitness enjoyable and effective. Highly knowledgeable and supportive—perfect for anyone serious about achieving their fitness goals. Highly recommended! ", image: ankushImg, rating: 5 },
-  { name: "Arnav Patel", review: "An exceptional gym trainer! Their guidance, motivation, and personalized workouts make fitness enjoyable and effective. Highly knowledgeable and supportive—perfect for anyone serious about achieving their fitness goals. Highly recommended!  ", image: arnavImg, rating: 4 },
+  { 
+    name: "Darrell Steward", 
+    review: "You made it so simple. My new site is much faster and easier to work with than my old site.", 
+    image: aashtaImg, 
+    tag: "#another",
+    profileLink: "https://twitter.com/darrell" // Change to actual profile link
+  },
+  { 
+    name: "Leslie Alexander", 
+    review: "Simply the best. Better than all the rest. I'd recommend this product to beginners and advanced users.", 
+    image: ananyaImg, 
+    tag: "#Celebration",
+    profileLink: "https://instagram.com/leslie"
+  },
+  { 
+    name: "Jenny Wilson", 
+    review: "This is a top-quality product. No need to think twice before making it live on web.", 
+    image: ankushImg, 
+    tag: "#make_it_fast",
+    profileLink: "https://twitter.com/jennywilson"
+  },
+  { 
+    name: "Kristin Watson", 
+    review: "Finally, I've found a template that covers all bases for a Bootstrap-based startup.", 
+    image: arnavImg, 
+    tag: "#Celebration",
+    profileLink: "https://instagram.com/kristinwatson"
+  },
+  { 
+    name: "Guy Hawkins", 
+    review: "This is a top-quality product. No need to think twice before making it live on web.", 
+    image: aashtaImg, 
+    tag: "#make_it_fast",
+    profileLink: "https://twitter.com/guyhawkins"
+  },
+  { 
+    name: "Marvin McKinney", 
+    review: "With Celebration, it’s quicker with the customer. The customer is more ensured of getting exactly what they ordered.", 
+    image: ananyaImg, 
+    tag: "#dev #tools",
+    profileLink: "https://instagram.com/marvin"
+  }
 ];
 
 const HeroTestimonials = () => {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const nextReview = () => {
-    setIndex((prevIndex) => (prevIndex + 1) % reviews.length);
-  };
-
-  const prevReview = () => {
-    setIndex((prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length);
-  };
-
   return (
-    <section className="hero-section">
-      <h1 className="h1a" >Our Clients</h1>
-      <div className="testimonial-container">
-        <div className="intro-client">
-          <img src={reviews[index].image} alt={reviews[index].name} className="testimonial-image" />
-          <div className="name-stars">
-            <div className="blu-name">
-              <h2 className="testimonial-name">{reviews[index].name}</h2>
-              <img src={blueticks} alt="Verified" className="bluet" />
+    <section className="testimonial-section">
+      <h1 className="testimonial-title">What our customers say</h1>
+      <p className="testimonial-subtitle">
+        Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis.
+      </p>
+      <div className="testimonial-grid">
+        {reviews.map((review, index) => (
+          <div key={index} className="testimonial-card">
+            <div className="testimonial-header">
+              <img src={review.image} alt={review.name} className="testimonial-avatar" />
+              <div className="testimonial-info">
+                <a 
+                  href={review.profileLink} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="testimonial-name"
+                >
+                  {review.name}
+                </a>
+                <img src={blueticks} alt="Verified" className="testimonial-badge" />
+              </div>
             </div>
-            <div className="stars">
-              {"★".repeat(reviews[index].rating)}{"☆".repeat(5 - reviews[index].rating)}
-            </div>
+            <p className="testimonial-review">"{review.review}"</p>
+            <span className="testimonial-tag">{review.tag}</span>
           </div>
-        </div>
-        <p className="testimonial-review">"{reviews[index].review}"</p>
-
-        <div className="button-container">
-          <button className="nav-btn" onClick={prevReview}><FaArrowLeft /></button>
-          <button className="nav-btn" onClick={nextReview}><FaArrowRight /></button>
-        </div>
+        ))}
       </div>
     </section>
   );
