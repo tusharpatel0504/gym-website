@@ -25,6 +25,8 @@ const Home = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showContactModal, setShowContactModal] = useState(false);
 
+    
+
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % bgImages.length);

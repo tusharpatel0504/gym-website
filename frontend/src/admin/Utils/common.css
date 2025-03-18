@@ -15,7 +15,7 @@
       border-radius: 5px;
       margin-bottom: 10px;
       cursor: pointer;
-      padding: 12px;
+    
 
       @media (max-width: 768px) {
         padding: 7px;
@@ -42,6 +42,7 @@
   }
 }
 .textadmin{
+  text-align: left;
   color: #ffffff;
 }
 .dashboard-admin {
@@ -51,4 +52,114 @@
 }
 .icon{
   color: rgb(255, 255, 255);
+}
+
+.sidebar {
+  margin-top: 120px;
+  width: 250px;
+  /* background: #33333361; */
+  padding: 20px;
+  height: 800px;
+}
+
+.sidebar ul {
+ 
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 15px;
+}
+
+.sidebar button {
+  width: 100%;
+  background: #444;
+  color: white;
+  border: none;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+}
+.sidebar button:hover {
+  
+  background-color: #5e5d5d;
+  
+}
+
+.sidebar .icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+/* Sidebar default state */
+.sidebar {
+  width: 250px;
+  transition: width 0.3s ease-in-out;
+}
+
+/* Small screens: Collapse sidebar */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 70px; /* Collapsed width */
+    padding: 20px 5px; /* Adjust padding */
+  }
+
+  .sidebar ul {
+    padding: 0;
+  }
+
+  .sidebar li {
+    text-align: center;
+  }
+
+  .sidebar button {
+    justify-content: center;
+    padding: 15px 10px; /* Adjust button padding */
+  }
+
+  .sidebar .icon {
+    margin-right: 0; /* Center the icon */
+  }
+
+  .sidebar .textadmin {
+    display: none; /* Hide text in collapsed mode */
+  }
+}
+
+/* Expanded sidebar on mobile */
+.sidebar.open {
+  width: 250px;
+}
+
+.sidebar.open .textadmin {
+  display: inline-block;
+}
+
+/* Toggle button */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #444;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
 }

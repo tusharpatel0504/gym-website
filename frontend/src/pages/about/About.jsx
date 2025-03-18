@@ -3,6 +3,9 @@ import aboutImage from "../../assets/tridevaboutimg.jpg"; // Ensure correct path
 import "./about.css";
 
 const About = () => {
+
+  
+
   return (
     <div className="about">
       <div className="about-content">

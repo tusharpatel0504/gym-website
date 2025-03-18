@@ -1,3 +1,4 @@
+/* Modal Styling */
 .custom-modal {
   position: fixed;
   top: 0;
@@ -8,6 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1000;
 }
 
 .custom-modal-content {
@@ -70,12 +72,14 @@
   cursor: pointer;
   font-size: 16px;
   margin-top: 15px;
+  transition: 0.3s ease-in-out;
 }
 
 .custom-modal-content button:hover {
   background-color: #6a3a8c;
 }
 
+/* Dashboard Layout */
 .dashboard-content1 {
   display: flex;
   flex-wrap: wrap;
@@ -92,15 +96,24 @@
   margin: auto;
 }
 
+/* Add Course Button Container */
 .add-course-btn-container {
-  margin-left: 130px;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+ /* Centers the button */
   margin-top: 90px;
   margin-bottom: -50px;
+  margin-left: 130px;
 }
 
 .add-course-btn-container button {
   background: #b34a09;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
   height: 50px;
+  margin-top: 70px;
   width: 200px;
   border: none;
   border-radius: 7px;
@@ -115,24 +128,72 @@
   background: #c2320e;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  .dashboard-content1 {
-    flex-direction: column;
-    align-items: center;
-  }
+/* For screens between 1024px and 768px */
+@media screen and (max-width: 1024px) {
+ 
 
   .add-course-btn-container {
-    justify-content: center;
-    margin: 20px 0;
-  }
-
-  .add-course-btn-container button {
-    width: 100%;
-    max-width: 250px;
+    margin-top: 82px;
+    margin-left: 70px;
   }
 
   .custom-modal-content {
-    width: 95%;
+    width: 90%;
   }
 }
+/* @media screen and (max-width: 968px) {
+  /* .dashboard-content1 {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  } */
+
+  /* .add-course-btn-container {
+    margin-top: 50px;
+    margin-left: 0;
+  }
+
+  .custom-modal-content {
+    width: 92%;
+  }
+} */ 
+@media screen and (max-width: 880px) {
+  /* .dashboard-content1 {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  } */
+
+  .add-course-btn-container {
+    margin-top: 90px;
+    margin-left: 25px;
+  }
+
+  .custom-modal-content {
+    width: 92%;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  /* .dashboard-content1 {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  } */
+
+  .add-course-btn-container {
+    margin-top: 50px;
+    margin-left: 40px;
+  }
+
+  .custom-modal-content {
+    width: 92%;
+  }
+}
+
+@media (max-width: 480px) {
+  .add-course-btn-container {
+    margin-top: -50px;
+    margin-left: 0;}
+  }

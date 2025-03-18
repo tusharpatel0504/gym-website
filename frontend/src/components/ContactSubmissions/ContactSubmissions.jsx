@@ -179,6 +179,7 @@ const ContactSubmissions123 = () => {
                 ))}
               </tbody>
             </table>
+            {filteredSubmissions.length === 0 && <p className="no-results">No users found.</p>}
           </div>
         </div>
       </div>

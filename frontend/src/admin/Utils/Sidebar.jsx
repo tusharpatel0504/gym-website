@@ -1,66 +1,73 @@
-import React from "react";
+import React, { useState } from "react";
 import "./common.css";
-import { Link } from "react-router-dom";
-import { AiFillHome, AiOutlineLogout } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
+import { AiFillHome, AiOutlineLogout, AiOutlineMenu } from "react-icons/ai";
 import { FaBook, FaUserAlt } from "react-icons/fa";
 import { UserData } from "../../context/UserContext";
-import ContactSubmissions from "../../components/ContactSubmissions/ContactSubmissions";
 
 const Sidebar = () => {
   const { user } = UserData();
+  const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="sidebar">
-      <ul>
-        <li>
-          <Link to={"/admin/dashboard"}>
-            <div className="icon">
-              <AiFillHome />
-            </div>
-            <span className="textadmin">Admin Home</span>
-          </Link>
-        </li>
+    <>
+      {/* Toggle Button for Mobile */}
+      {/* <button className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
+        <AiOutlineMenu />
+      </button> */}
 
-        <li>
-          <Link to={"/admin/course"}>
-            <div className="icon">
-              <FaBook />
-            </div>
-            <span className="textadmin" >Courses</span>
-          </Link>
-          
-        </li>
-        <li>
-          <Link to={"/admin/contactSubmissions"}>
-            <div className="icon">
-              <FaBook />
-            </div>
-            <span className="textadmin" >Contact Submissions</span>
-          </Link>
-          
-        </li>
-
-        {user && user.mainrole === "admin" && (
+      <div className={`sidebar ${isOpen ? "open" : ""}`}>
+        <ul>
           <li>
-            <Link to={"/admin/users"}>
+            <button onClick={() => navigate("/admin/dashboard")}>
               <div className="icon">
-                <FaUserAlt />
+                <AiFillHome />
               </div>
-              <span className="textadmin" >Users</span>
-            </Link>
+              <span className="textadmin">Admin Home</span>
+            </button>
           </li>
-        )}
 
-        <li>
-          <Link to={"/account"}>
-            <div className="icon">
-              <AiOutlineLogout />
-            </div>
-            <span className="textadmin" >Back</span>
-          </Link>
+          <li>
+            <button onClick={() => navigate("/admin/course")}>
+              <div className="icon">
+                <FaBook />
+              </div>
+              <span className="textadmin">Courses</span>
+            </button>
+          </li>
 
-        </li>        
-      </ul>
-    </div>
+          <li>
+            <button onClick={() => navigate("/admin/contactSubmissions")}>
+              <div className="icon">
+                <FaBook />
+              </div>
+              <span className="textadmin">Contact Submissions</span>
+            </button>
+          </li>
+
+          {user && user.mainrole === "admin" && (
+            <li>
+              <button onClick={() => navigate("/admin/users")}>
+                <div className="icon">
+                  <FaUserAlt />
+                </div>
+                <span className="textadmin">Users</span>
+              </button>
+            </li>
+          )}
+
+          <li>
+            <button onClick={() => navigate("/account")}>
+              <div className="icon">
+                <AiOutlineLogout />
+              </div>
+              <span className="textadmin">Back</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </>
   );
 };
 

@@ -1,5 +1,5 @@
 .dashboard-main {
-  
+  height: 650px;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -49,7 +49,7 @@
 
 .modal-container {
   position: relative; /* Ensures the close button is positioned inside */
-  margin-top: 80px;
+  margin-top: 0px;
   background: rgb(57, 56, 56);
   padding: 30px;
   border-radius: 8px;
@@ -66,8 +66,8 @@
   font-size: 25px;
   font-weight: bold;
   position: absolute;
-  top: 3px;
-  right: 10px;
+  top: 2px;
+  right: 8px;
   cursor: pointer;
   color: white;
   transition: 0.3s ease;
