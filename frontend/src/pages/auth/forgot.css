@@ -12,7 +12,8 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg, #242020, #000000);
+  /* background: linear-gradient(135deg, #242020, #000000); */
+  background-color: black;
   padding: 20px;
 }
 

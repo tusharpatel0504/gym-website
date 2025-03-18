@@ -1,7 +1,8 @@
 .student-dashboard {
+
   padding: 180px 0 80px 0;
   text-align: center;
-  min-height: 55vh;
+  min-height: 800px;
   position: relative; /* Required for absolute positioning */
   overflow: hidden;
 }
