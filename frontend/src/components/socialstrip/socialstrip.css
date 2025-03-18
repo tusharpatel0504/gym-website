@@ -1,0 +1,100 @@
+.social-strip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    gap: 50px;
+    height: 100px;
+    width: 100%;
+    
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-item:hover {
+    color: #555;
+}
+
+.social-icon {
+    background: rgb(255, 255, 255);
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+}
+
+.social-icon img {
+    width: 40px; /* Default icon size */
+    height: 40px;
+    transition: all 0.3s ease-in-out;
+}
+
+.social-name {
+    font-size: 22px; /* Default font size */
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Medium screens (Tablets, 768px and below) */
+@media screen and (max-width: 768px) {
+    .social-strip {
+        gap: 30px;
+        height: auto;
+        padding: 10px;
+    }
+
+    .social-icon img {
+        width: 32px; /* Reduce icon size */
+        height: 32px;
+    }
+
+    .social-name {
+        font-size: 18px; /* Reduce text size */
+    }
+}
+
+/* Small screens (Phones, 480px and below) */
+@media screen and (max-width: 480px) {
+    .social-strip {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .social-item {
+        margin: 5px 0;
+    }
+
+    .social-icon img {
+        width: 25px; /* Further reduce icon size */
+        height: 25px;
+    }
+
+    .social-name {
+        font-size: 16px; /* Further reduce text size */
+    }
+}
+
+/* Extra small screens (350px and below) */
+@media screen and (max-width: 350px) {
+    .social-icon img {
+        width: 20px; /* Smallest icon size */
+        height: 20px;
+    }
+
+    .social-name {
+        font-size: 14px; /* Smallest text size */
+    }
+}

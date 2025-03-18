@@ -36,7 +36,7 @@
   width: 100%;
   flex-direction: column;
   display: flex;
-  text-align: center;
+  text-align:left;
   justify-content: center;
   align-content: center;
   align-items: center;
