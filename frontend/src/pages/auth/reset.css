@@ -16,8 +16,9 @@
     min-height: 100vh;
     padding: 20px;
   }
-  
+ 
   .auth-page {
+   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,4 +107,13 @@
       font-size: 0.9rem;
     }
   }
+  .reset-container {
+    margin-top: 100px;
+    margin-bottom: 70px;
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
   
