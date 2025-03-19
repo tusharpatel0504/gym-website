@@ -6,6 +6,7 @@ import uploadedImage from "../../assets/kartik.jpg"; // Using the uploaded image
 import img1 from "../../assets/coching-sec-img1.png";
 import img2 from "../../assets/coching-sec-img2.png";
 import img3 from "../../assets/coching-sec-img3.png";
+import img4 from "../../assets/5555555555.png";
 
 const SVideo = () => {
   return (

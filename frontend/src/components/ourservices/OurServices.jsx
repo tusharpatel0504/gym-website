@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Image from "../../assets/OURSERVICEPG.svg";
+import Image from "../../assets/98745.png";
 import "../ourservices/Ourservices.css";
 
 const OurService = () => {

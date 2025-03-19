@@ -52,7 +52,7 @@ const Home = () => {
                 <div className="homePage-hero-content">
                     <div className="homePage-hero-title"><h1>Tridev Pandey</h1></div>
                     <p className="homePage-hero-description">
-                    Hi, I'm TREDEV PANDEY. I specialize in nutrition, business, and solving fat-loss challenges. With years of experience, I help individuals achieve their health goals through customized strategies, diet plans, and fitness coaching. My mission is to educate and empower people to lead a healthy lifestyle.
+                    Hi, I'm TRIDEV PANDEY. I specialize in nutrition, business, and solving fat-loss challenges. With years of experience, I help individuals achieve their health goals through customized strategies, diet plans, and fitness coaching. My mission is to educate and empower people to lead a healthy lifestyle.
                     </p>
                     <div className="bbbtttnnn">
                     <button className="homePage-explore-btn" onClick={() => navigate("/about")}>Explore More</button>

@@ -18,7 +18,7 @@ const About = () => {
         <div className="about-text">
           <h1>About Me</h1>
           <p>
-            Hi, I'm <strong>TREDEV PANDEY</strong>. I specialize in <strong>nutrition, business, and solving fat-loss challenges</strong>. 
+            Hi, I'm <strong>TRIDEV PANDEY</strong>. I specialize in <strong>nutrition, business, and solving fat-loss challenges</strong>. 
             With years of experience, I help individuals achieve their health goals through customized strategies, diet plans, 
             and fitness coaching. My mission is to educate and empower people to lead a healthy lifestyle.
           </p>
