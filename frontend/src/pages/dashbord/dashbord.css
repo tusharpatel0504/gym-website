@@ -1,6 +1,6 @@
 .student-dashboard {
 
-  padding: 180px 0 80px 0;
+  padding: 120px 0 80px 0;
   text-align: center;
   min-height: 800px;
   position: relative; /* Required for absolute positioning */
@@ -61,4 +61,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
   filter: blur(120px);
+}
+@media screen and (max-width: 470px) {
+  .student-dashboard {
+
+    padding: 40px 0 80px 0;
+    
+  }
+  
+  
 }

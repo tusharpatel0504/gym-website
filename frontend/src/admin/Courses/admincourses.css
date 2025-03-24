@@ -18,6 +18,7 @@
   border-radius: 10px;
   width: 90%;
   max-width: 500px;
+  max-height:750px ;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   position: relative;
@@ -138,25 +139,27 @@
   }
 
   .custom-modal-content {
-    width: 90%;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    max-height:750px ;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
   }
+  
+  .custom-modal-content label {
+    font-size: 12px;
+  }
+  .custom-modal-content h2 {
+    font-size: 18px;
+  
+  
 }
-/* @media screen and (max-width: 968px) {
-  /* .dashboard-content1 {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  } */
+}
 
-  /* .add-course-btn-container {
-    margin-top: 50px;
-    margin-left: 0;
-  }
-
-  .custom-modal-content {
-    width: 92%;
-  }
-} */ 
 @media screen and (max-width: 880px) {
   /* .dashboard-content1 {
     flex-direction: column;
@@ -185,15 +188,29 @@
   .add-course-btn-container {
     margin-top: 50px;
     margin-left: 40px;
+    
   }
 
   .custom-modal-content {
-    width: 92%;
+    width: 70%;
+    height: 640px;
+   
   }
+  .custom-modal-content h2 {
+    margin-bottom: -5px;
+    font-size: 15px;
+  }
+  .custom-modal-content label {
+    
+    font-size: 10px;
+  }
+
+  
 }
 
 @media (max-width: 480px) {
   .add-course-btn-container {
     margin-top: -50px;
-    margin-left: 0;}
+    margin-left: 0;
+  }
   }

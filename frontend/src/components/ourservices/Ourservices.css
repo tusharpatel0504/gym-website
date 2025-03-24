@@ -5,7 +5,7 @@
   flex-direction: column; /* Stack elements vertically */
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: #0f0f0f;
   padding: 100px;
   overflow: hidden;
 }
