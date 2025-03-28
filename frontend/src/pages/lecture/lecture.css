@@ -753,6 +753,7 @@
   .video-container {
     min-width: 200px;
     max-width: 400px;
+    margin-top: -250px;
   }
 
   .left1 {
@@ -765,6 +766,7 @@
     width: 380px;
     color: white;
   }
+  
 
   .lecture-title-study {
     width: 380px;
@@ -772,6 +774,11 @@
   .vyakhya{
     width: 400px;
   }
+  .pleasetxt {
+    margin-top: -280px;
+    font-size: 55px;
+    color: white;
+}
 }
 
 @media (max-width: 400px) {
@@ -797,6 +804,12 @@
   .vyakhya{
     width: 350px;
   }
+  .pleasetxt {
+    margin-top: -280px;
+    font-size: 55px;
+    color: white;
+}
+
 }
 .lecture-title-study {
   border-radius: 12px;

@@ -194,7 +194,7 @@
 /* Reduce logo sizes for small screens */
 @media screen and (max-width: 496px) {
   .logo-item {
-    width: 75px;
+    width: 60px;
   }
   .trainwithus-container {
     border-radius: 20px;
@@ -245,7 +245,7 @@
 
   @media screen and (max-width: 400px) {
     .logo-item {
-      width: 50px;
+      width: 35px;
     }
     .trainwithus-container {
       border-radius: 20px;

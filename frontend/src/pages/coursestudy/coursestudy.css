@@ -234,3 +234,12 @@
   left: 50%;
   
 }
+@media (max-width: 480px) {
+  /* .course-study-page {
+    margin:0px;
+  } */
+  .mainstudydiv{
+    padding-top: 0px;
+  }
+
+}
